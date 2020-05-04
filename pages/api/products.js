@@ -1,4 +1,3 @@
-// import products from '../../static/products.json';
 import Product from '../../models/Product';
 import connectDB from '../../utils/connectDb';
 
