@@ -9,7 +9,7 @@ export default async (req, res) => {
   const { name, email, password} = req.body;
   try{
     // 1) Check to see if the user already exists in the db
-    const user = User.findOne({ email });
+    const user = await User.findOne({ email });
     if(user){
       return res.status(402).send(`User already exits with email ${email}`)
     }
