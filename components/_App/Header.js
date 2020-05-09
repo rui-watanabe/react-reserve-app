@@ -38,7 +38,7 @@ function Header({ user }) {
               name="cart"
               size="large"
             />
-            ReactReserve
+            Cart
           </Menu.Item>
         </Link>
 
