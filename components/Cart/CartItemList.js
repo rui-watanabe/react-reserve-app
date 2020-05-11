@@ -46,6 +46,7 @@ function CartItemList({ products, user }) {
 
   return(
     <Item.Group
+      divided
       items={mapCreateProductsToItems(products)}
     />
   )
