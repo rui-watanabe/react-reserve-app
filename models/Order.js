@@ -21,11 +21,11 @@ const OrderSchema = new mongoose.Schema({
   ],
   email: {
     type: String,
-    requiredPaths: true
+    required: true
   },
   total: {
     type: Number,
-    requiredPaths: true
+    required: true
   }
 }, {
   timestamps: true
