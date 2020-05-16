@@ -1,5 +1,8 @@
 import Order from '../../models/Order';
 import jwt from 'jsonwebtoken';
+import connectDB from '../../utils/connectDb';
+
+connectDB();
 
 export default async (req, res) => {
   try{
