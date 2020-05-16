@@ -42,5 +42,5 @@ async function handlePutRequest(req, res){
     { _id },
     { role }
   )
-  res.status(204).send("User updated")
+  res.status(204).send("User updated");
 }
