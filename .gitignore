@@ -7,3 +7,4 @@ next.config.*
 now.json
 
 .history
+.vercel
