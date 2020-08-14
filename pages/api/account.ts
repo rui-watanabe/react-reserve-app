@@ -1,11 +1,11 @@
-import User from '../../models/User';
-import jwt from 'jsonwebtoken';
-import connectDB from '../../utils/connectDb';
+import User from "../../models/User";
+import jwt from "jsonwebtoken";
+import connectDB from "../../utils/connectDb";
 
 connectDB();
 
 export default async (req, res) => {
-  switch(req.method){
+  switch (req.method) {
     case "GET":
       await handleGetRequest(req, res);
       break;
@@ -13,34 +13,34 @@ export default async (req, res) => {
       await handlePutRequest(req, res);
       break;
     default:
-      res.status(405).send(`Method ${req.method} not allowed`)
+      res.status(405).send(`Method ${req.method} not allowed`);
       break;
   }
-}
+};
 
-async function handleGetRequest(req, res){
+async function handleGetRequest(req, res) {
   //!req.headers.authorization
-  if(!("authorization" in req.headers)){
+  if (!("authorization" in req.headers)) {
     return res.status(401).send("No authorization token");
   }
-  try{
-    const { userId } = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
+  try {
+    const { userId } = jwt.verify(
+      req.headers.authorization,
+      process.env.JWT_SECRET
+    );
     const user = await User.findOne({ _id: userId });
-    if(user){
+    if (user) {
       res.status(200).json(user);
-    }else{
+    } else {
       res.status(400).send("User not found");
     }
-  }catch(error){
+  } catch (error) {
     res.status(403).send("Invalid token");
   }
 }
 
-async function handlePutRequest(req, res){
+async function handlePutRequest(req, res) {
   const { _id, role } = req.body;
-  await User.findOneAndUpdate(
-    { _id },
-    { role }
-  )
+  await User.findOneAndUpdate({ _id }, { role });
   res.status(204).send("User updated");
 }

@@ -1,49 +1,49 @@
-import React from 'react';
-import { Button, Form, Icon, Message, Segment } from 'semantic-ui-react';
-import Link from 'next/link';
-import catchErrors from '../utils/catchErrors';
-import baseUrl from '../utils/baseUrl';
-import axios from 'axios';
-import { handleLogin } from '../utils/auth' 
+import React from "react";
+import { Button, Form, Icon, Message, Segment } from "semantic-ui-react";
+import Link from "next/link";
+import catchErrors from "../utils/catchErrors";
+import baseUrl from "../utils/baseUrl";
+import axios from "axios";
+import { handleLogin } from "../utils/auth";
 
 const INITIAL_USER = {
   email: "",
-  password: ""
-}
+  password: "",
+};
 
 function Login() {
   const [user, setUser] = React.useState(INITIAL_USER);
   const [disabled, setDisabled] = React.useState(true);
   const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState('');
+  const [error, setError] = React.useState("");
 
   React.useEffect(() => {
-    const isUser = Object.values(user).every(el => Boolean(el));
+    const isUser = Object.values(user).every((el) => Boolean(el));
     isUser ? setDisabled(false) : setDisabled(true);
-  },[user])
+  }, [user]);
 
-  function handleChange(event){
+  function handleChange(event) {
     const { name, value } = event.target;
-    setUser(prevState => ({ ...prevState, [name]: value}));
+    setUser((prevState) => ({ ...prevState, [name]: value }));
   }
 
-  async function handleSubmit(event){
+  async function handleSubmit(event) {
     event.preventDefault();
-    try{
+    try {
       setLoading(true);
-      setError('');
+      setError("");
       const url = `${baseUrl}/api/login`;
       const payload = { ...user };
       const response = await axios.post(url, payload);
       handleLogin(response.data);
-    }catch(error){
+    } catch (error) {
       catchErrors(error, setError);
-    }finally{
+    } finally {
       setLoading(false);
     }
   }
 
-  return(
+  return (
     <>
       <Message
         attached
@@ -53,11 +53,7 @@ function Login() {
         color="blue"
       />
       <Form error={Boolean(error)} loading={loading} onSubmit={handleSubmit}>
-        <Message
-          error
-          header="Oops!"
-          content={error}
-        />
+        <Message error header="Oops!" content={error} />
         <Segment>
           <Form.Input
             fluid
@@ -95,10 +91,11 @@ function Login() {
         New user?{" "}
         <Link href="/signup">
           <a>Sign up here</a>
-        </Link>{""}instead.
+        </Link>
+        {""}instead.
       </Message>
     </>
-  )
+  );
 }
 
 export default Login;

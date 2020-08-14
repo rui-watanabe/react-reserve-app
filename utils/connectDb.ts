@@ -1,8 +1,8 @@
-import mongoose, { connect } from 'mongoose';
+import mongoose, { connect } from "../../models/node_modules/mongoose";
 const connection = {};
 
-async function connectDB(){
-  if(connection.isConnected){
+async function connectDB() {
+  if (connection.isConnected) {
     // Use exiting database connection
     console.log("Using exiting connection");
     return;
@@ -12,7 +12,7 @@ async function connectDB(){
     useCreateIndex: true,
     useFindAndModify: false,
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   });
   console.log("DB Connected");
   connection.isConnected = db.connections[0].readyState;
