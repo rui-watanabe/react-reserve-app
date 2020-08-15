@@ -6,12 +6,16 @@ import baseUrl from "../utils/baseUrl";
 import axios from "axios";
 import Router from "next/router";
 
+interface userProps {
+  user?: any;
+}
+
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     //各コンポーネント.getInitialPropsで指定したオブジェクトのデータがctxに入る
     const { token } = parseCookies(ctx);
 
-    let pageProps = {};
+    let pageProps: userProps = {};
 
     //非同期でサーバーにレンダリング
     if (Component.getInitialProps) {

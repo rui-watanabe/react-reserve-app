@@ -4,9 +4,9 @@ import Router, { useRouter } from 'next/router'
 import NProgress from 'nprogress'
 import { handleLogout } from '../../utils/auth'
 
-Router.onRouteChangeStart = () => NProgress.start()
-Router.onRouteChangeComplete = () => NProgress.done()
-Router.onRouteChangeError = () => NProgress.done()
+Router.events.on('onRouteChangeStart', () => NProgress.start())
+Router.events.on('onRouteChangeComplete', () => NProgress.done())
+Router.events.on('routeChangeError', () => NProgress.done())
 
 function Header({ user }) {
   const router = useRouter()
