@@ -3,18 +3,19 @@ import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
 import NProgress from 'nprogress'
 import { handleLogout } from '../../utils/auth'
+import { HeaderProps } from './HeaderType'
 
 Router.events.on('onRouteChangeStart', () => NProgress.start())
 Router.events.on('onRouteChangeComplete', () => NProgress.done())
 Router.events.on('routeChangeError', () => NProgress.done())
 
-function Header({ user }) {
+export function Header({ user }: HeaderProps) {
   const router = useRouter()
   const isRoot = user && user.role === 'root'
   const isAdmin = user && user.role === 'admin'
   const isRootOrAdmin = isRoot || isAdmin
 
-  function isActive(route) {
+  function isActive(route: string): boolean {
     return route === router.pathname
   }
 
@@ -83,5 +84,3 @@ function Header({ user }) {
     </Menu>
   )
 }
-
-export default Header
