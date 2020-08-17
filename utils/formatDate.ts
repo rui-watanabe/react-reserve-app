@@ -1,5 +1,5 @@
-function formatDate(date){
-  return new Date(date).toLocaleDateString('ja-JP');
+function formatDate(date: Date) {
+  return new Date(date).toLocaleDateString('ja-JP')
 }
 
-export default formatDate;
+export default formatDate

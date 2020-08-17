@@ -1,20 +1,28 @@
-import { Header, Accordion, Label, Segment, Icon, Button, List, Image }
- from 'semantic-ui-react';
-import { useRouter } from 'next/router';
-import formatDate from '../../utils/formatDate';
+import {
+  Header,
+  Accordion,
+  Label,
+  Segment,
+  Icon,
+  Button,
+  List,
+  Image,
+} from 'semantic-ui-react'
+import { useRouter } from 'next/router'
+import formatDate from '../../utils/formatDate'
+import { AccountOrdersProps } from './AccountType'
 
+function AccountOrders({ orders }: AccountOrdersProps) {
+  const router = useRouter()
 
-function AccountOrders({ orders }) {
-  const router = useRouter();
-
-  function mapOrdersToPanels(orders){
-    return orders.map(order => ({
+  function mapOrdersToPanels(orders) {
+    return orders.map((order) => ({
       key: order._id,
-      title:{
-        content: <Label color="blue" content={formatDate(order.createdAt)} />
+      title: {
+        content: <Label color="blue" content={formatDate(order.createdAt)} />,
       },
-      content:{
-        content:(
+      content: {
+        content: (
           <>
             <List.Header as="h3">
               Total: ${order.total}
@@ -23,11 +31,11 @@ function AccountOrders({ orders }) {
                 icon="mail"
                 basic
                 horizontal
-                style={{ marginLeft: "1em" }}
+                style={{ marginLeft: '1em' }}
               />
             </List.Header>
             <List>
-              {order.products.map(p => (
+              {order.products.map((p) => (
                 <List.Item key={p.product._id}>
                   <Image avatar src={p.product.mediaUrl} />
                   <List.Content>
@@ -45,12 +53,12 @@ function AccountOrders({ orders }) {
               ))}
             </List>
           </>
-        )
-      }
-    }));
+        ),
+      },
+    }))
   }
 
-  return(
+  return (
     <>
       <Header as="h2">
         <Icon name="folder open" />
@@ -80,4 +88,4 @@ function AccountOrders({ orders }) {
   )
 }
 
-export default AccountOrders;
+export default AccountOrders
