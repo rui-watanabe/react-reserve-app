@@ -4,9 +4,13 @@ import { Header, Table, Icon, Checkbox } from 'semantic-ui-react'
 import baseUrl from '../../utils/baseUrl'
 import cookie from 'js-cookie'
 import formatDate from '../../utils/formatDate'
+import { AccountPermissionsProps, UserPermissionProps } from './AccountType'
 
-function AccountPermissions({id}) {
-  const [users, setUsers] = React.useState([])
+function AccountPermissions({ id }: AccountPermissionsProps) {
+  const [users, setUsers]: [
+    UserPermissionProps[],
+    React.Dispatch<React.SetStateAction<{}>>
+  ] = React.useState([])
 
   React.useEffect(() => {
     getUsers()
@@ -14,9 +18,9 @@ function AccountPermissions({id}) {
 
   async function getUsers() {
     const url = `${baseUrl}/api/users`
-    const token = cookie.get('token')
+    const token: string = cookie.get('token')
     const payload = { headers: { Authorization: token } }
-    const response = await axios.get(url, payload)
+    const response = await axios.get<[UserPermissionProps]>(url, payload)
     setUsers(response.data)
   }
 
@@ -48,7 +52,7 @@ function AccountPermissions({id}) {
   )
 }
 
-function UserPermission({ user }) {
+function UserPermission({ user }: UserPermissionProps) {
   const [admin, setAdmin] = React.useState(user.role === 'admin')
 
   const isFirstRun = React.useRef(true)

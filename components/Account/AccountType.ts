@@ -26,3 +26,22 @@ export type AccountOrdersProps = {
     ]
   }[]
 }
+
+export interface AccountPermissionsProps {
+  id: string
+}
+
+export interface UserPermissionProps {
+  users: [
+    {
+      user: {
+        _id: string
+        role: string
+        name: string
+        email: string
+        createdAt: Date
+        updatedAt: Date
+      }
+    }
+  ]
+}
