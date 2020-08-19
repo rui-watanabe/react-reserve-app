@@ -31,17 +31,15 @@ export interface AccountPermissionsProps {
   id: string
 }
 
-export interface UserPermissionProps {
-  users: [
+export type UserPermissionProps = {
+  data: [
     {
-      user: {
-        _id: string
-        role: string
-        name: string
-        email: string
-        createdAt: Date
-        updatedAt: Date
-      }
+      _id: string
+      role: string
+      name: string
+      email: string
+      createdAt: Date
+      updatedAt: Date
     }
   ]
 }
