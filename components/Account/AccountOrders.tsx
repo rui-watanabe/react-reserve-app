@@ -10,12 +10,12 @@ import {
 } from 'semantic-ui-react'
 import { useRouter } from 'next/router'
 import formatDate from '../../utils/formatDate'
-import { AccountOrdersProps } from './AccountType'
+import { AccountOrdersProps, mapOrdersToPanelsProps } from './AccountType'
 
 function AccountOrders({ orders }: AccountOrdersProps) {
   const router = useRouter()
 
-  function mapOrdersToPanels(orders) {
+  function mapOrdersToPanels(orders: mapOrdersToPanelsProps[]) {
     return orders.map((order) => ({
       key: order._id,
       title: {
