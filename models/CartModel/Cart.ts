@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { CartModelType } from './ModelsType';
+import { CartModelWithDocType } from './CartType';
 
 const { ObjectId, Number } = mongoose.Schema.Types;
 
@@ -23,4 +23,4 @@ const CartSchema = new mongoose.Schema({
 });
 
 export default mongoose.models.Cart ||
-  mongoose.model<CartModelType>('Cart', CartSchema);
+  mongoose.model<CartModelWithDocType>('Cart', CartSchema);

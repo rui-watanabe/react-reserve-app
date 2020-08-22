@@ -8,17 +8,17 @@ import {
   Button,
   List,
   Image,
+  Message,
 } from 'semantic-ui-react';
 import { useRouter } from 'next/router';
 import formatDate from '../../utils/formatDate';
 import { AccountOrdersProps } from './AccountType';
-import { OrderType, ProductModelInterface } from '../../models/ModelsType';
+import { OrderModelType } from '../../models/OrderModel/OrderType';
 
 function AccountOrders({ orders }: AccountOrdersProps) {
   const router = useRouter();
-  let mapProduct: ProductModelInterface;
 
-  function mapOrdersToPanels(orders: OrderType[]) {
+  function mapOrdersToPanels(orders: OrderModelType[]) {
     return orders.map((order) => ({
       key: order._id,
       title: {
@@ -39,25 +39,29 @@ function AccountOrders({ orders }: AccountOrdersProps) {
             </List.Header>
             <List>
               {order.products.map((p) => {
-                if (typeof p.product !== 'string') {
-                  mapProduct = p.product;
-                  return (
-                    <List.Item key={p.product._id}>
-                      <Image avatar src={p.product.mediaUrl} />
-                      <List.Content>
-                        <List.Header>{p.product.name}</List.Header>
-                        <List.Description>
-                          {p.quantity} ・ ${p.product.price}
-                        </List.Description>
-                      </List.Content>
-                      <List.Content floated="right">
-                        <Label tag color="red" size="tiny">
-                          {p.product.sku}
-                        </Label>
-                      </List.Content>
-                    </List.Item>
-                  );
-                }
+                typeof p.product !== 'string' ? (
+                  <List.Item key={p.product._id}>
+                    <Image avatar src={p.product.mediaUrl} />
+                    <List.Content>
+                      <List.Header>{p.product.name}</List.Header>
+                      <List.Description>
+                        {p.quantity} ・ ${p.product.price}
+                      </List.Description>
+                    </List.Content>
+                    <List.Content floated="right">
+                      <Label tag color="red" size="tiny">
+                        {p.product.sku}
+                      </Label>
+                    </List.Content>
+                  </List.Item>
+                ) : (
+                  <Message negative>
+                    <Message.Header>
+                      We're sorry we can't apply that discount
+                    </Message.Header>
+                    <p>Setting Product ObjectId error!</p>
+                  </Message>
+                );
               })}
             </List>
           </>

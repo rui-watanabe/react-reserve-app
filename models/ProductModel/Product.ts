@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import shortid from 'shortid';
-import { ProductModelType } from './ModelsType';
+import { ProductModelWithDocType } from './ProductType';
 
 const { String, Number } = mongoose.Schema.Types;
 
@@ -29,4 +29,4 @@ const ProductSchema = new mongoose.Schema({
 });
 
 export default mongoose.models.Product ||
-  mongoose.model<ProductModelType>('Product', ProductSchema);
+  mongoose.model<ProductModelWithDocType>('Product', ProductSchema);

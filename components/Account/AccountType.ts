@@ -1,15 +1,16 @@
-import { OrderType, UserType } from '../../models/ModelsType';
+import { OrderModelType } from '../../models/OrderModel/OrderType';
+import { UserModelType } from '../../models/UserModel/UserType';
 
 export interface AccountOrdersProps {
-  orders: OrderType[];
+  orders: OrderModelType[];
 }
 
 // export interface AccountPermissionsProps {
 //   id: string;
 // }
 
-export type SetUsersType = UserType[];
+export type SetUsersType = UserModelType[];
 
 export interface UserPermissionProps {
-  user: UserType;
+  user: UserModelType;
 }

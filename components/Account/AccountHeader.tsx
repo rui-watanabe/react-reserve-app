@@ -1,8 +1,8 @@
 import { Header, Icon, Segment, Label } from 'semantic-ui-react';
 import formatDate from '../../utils/formatDate';
-import { UserType } from '../../models/ModelsType';
+import { UserModelType } from '../../models/UserModel/UserType';
 
-function AccountHeader({ role, email, name, createdAt }: UserType) {
+function AccountHeader({ role, email, name, createdAt }: UserModelType) {
   return (
     <Segment secondary inverted color="violet">
       <Label

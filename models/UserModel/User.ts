@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { UserModelType } from './ModelsType';
+import { UserModelWithDocType } from './UserType';
 
 const { String } = mongoose.Schema.Types;
 
@@ -32,4 +32,4 @@ const UserSchema = new mongoose.Schema(
 );
 
 export default mongoose.models.User ||
-  mongoose.model<UserModelType>('User', UserSchema);
+  mongoose.model<UserModelWithDocType>('User', UserSchema);

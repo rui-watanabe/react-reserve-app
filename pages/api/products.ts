@@ -1,5 +1,5 @@
-import Product from "../../models/Product";
-import connectDB from "../../utils/connectDb";
+import Product from '../../models/ProductModel/Product';
+import connectDB from '../../utils/connectDb';
 
 connectDB();
 

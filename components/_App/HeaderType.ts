@@ -1,5 +1,5 @@
-import { UserType } from '../../models/ModelsType';
+import { UserModelType } from '../../models/UserModel/UserType';
 
 export interface HeaderProps {
-  user: UserType;
+  user: UserModelType;
 }

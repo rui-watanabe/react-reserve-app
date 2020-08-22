@@ -1,9 +1,9 @@
-import Stripe from "stripe";
-import uuidv4 from "uuid/v4";
-import jwt from "jsonwebtoken";
-import Cart from "../../models/Cart";
-import Order from "../../models/Order";
-import calculateCartTotal from "../../utils/calculateCartTotal";
+import Stripe from 'stripe';
+import uuidv4 from 'uuid/v4';
+import jwt from 'jsonwebtoken';
+import Cart from '../../models/CartModel/Cart';
+import Order from '../../models/OrderModel/Order';
+import calculateCartTotal from '../../utils/calculateCartTotal';
 
 const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
 
@@ -18,8 +18,8 @@ export default async (req, res) => {
     );
     // 2) Find cart based on user id, populate it
     const cart = await Cart.findOne({ user: userId }).populate({
-      path: "products.product",
-      model: "Product",
+      path: 'products.product',
+      model: 'Product',
     });
     // 3) Calculate cart totals again from cart products
     const { cartTotal, stripeTotal } = calculateCartTotal(cart.products);
@@ -42,7 +42,7 @@ export default async (req, res) => {
     // 6) Create charge with total, send receipt email
     const charge = await stripe.charges.create(
       {
-        currency: "usd",
+        currency: 'usd',
         amount: stripeTotal,
         receipt_email: paymentData.email,
         customer,
@@ -62,9 +62,9 @@ export default async (req, res) => {
     // 8) Clear products in cart
     await Cart.findOneAndUpdate({ _id: cart._id }, { $set: { products: [] } });
     // 9) Send back success (200) response
-    res.status(200).send("Checkout Successful!");
+    res.status(200).send('Checkout Successful!');
   } catch (errors) {
     console.error(errors);
-    res.status(500).send("Error processing charge");
+    res.status(500).send('Error processing charge');
   }
 };

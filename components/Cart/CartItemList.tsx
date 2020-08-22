@@ -1,10 +1,23 @@
-import { Header, Segment, Button, Icon, Item, Message } from 'semantic-ui-react'
-import { useRouter } from 'next/router'
+import {
+  Header,
+  Segment,
+  Button,
+  Icon,
+  Item,
+  Message,
+} from 'semantic-ui-react';
+import { useRouter } from 'next/router';
+import { CartItemListProps, CartProductsType } from './CartType';
 
-function CartItemList({ products, user, handleRemoveFromCart, success }) {
-  const router = useRouter()
+function CartItemList({
+  products,
+  user,
+  handleRemoveFromCart,
+  success,
+}: CartItemListProps) {
+  const router = useRouter();
 
-  function mapCreateProductsToItems(products) {
+  function mapCreateProductsToItems(products: CartProductsType) {
     return products.map((p) => ({
       childKey: p.product._id,
       header: (
@@ -26,7 +39,7 @@ function CartItemList({ products, user, handleRemoveFromCart, success }) {
           onClick={() => handleRemoveFromCart(p.product._id)}
         />
       ),
-    }))
+    }));
   }
 
   if (success) {
@@ -37,7 +50,7 @@ function CartItemList({ products, user, handleRemoveFromCart, success }) {
         content="Your order and payment has been accepted"
         icon="star outline"
       />
-    )
+    );
   }
 
   if (products.length === 0) {
@@ -59,10 +72,10 @@ function CartItemList({ products, user, handleRemoveFromCart, success }) {
           )}
         </div>
       </Segment>
-    )
+    );
   }
 
-  return <Item.Group divided items={mapCreateProductsToItems(products)} />
+  return <Item.Group divided items={mapCreateProductsToItems(products)} />;
 }
 
-export default CartItemList
+export default CartItemList;

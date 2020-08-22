@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { OrderModelType } from './ModelsType';
+import { OrderModelWithDocType } from './OrderType';
 
 const { ObjectId, Number, String } = mongoose.Schema.Types;
 
@@ -36,4 +36,4 @@ const OrderSchema = new mongoose.Schema(
 );
 
 export default mongoose.models.Order ||
-  mongoose.model<OrderModelType>('Order', OrderSchema);
+  mongoose.model<OrderModelWithDocType>('Order', OrderSchema);
