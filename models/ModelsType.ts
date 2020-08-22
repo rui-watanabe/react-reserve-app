@@ -1,33 +1,9 @@
 import mongoose from 'mongoose';
 
-export interface CartModelInterface {
-  user: string;
-  products: [
-    {
-      quantity: number;
-      product: string;
-    }
-  ];
-}
-
-export interface OrderModelInterface {
-  user: string;
-  products: [
-    {
-      quantity: number;
-      product: string;
-    }
-  ];
-  email: string;
-  total: number;
-}
-
-export interface ProductModelInterface {
-  name: string;
-  price: number;
-  sku: string;
-  description: string;
-  mediaUrl: string;
+interface ModelResInterface {
+  _id: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface UserModelInterface {
@@ -37,10 +13,44 @@ export interface UserModelInterface {
   role: 'user' | 'admin' | 'root';
 }
 
-export type CartModelType = CartModelInterface & mongoose.Document;
+export type UserModelType = UserModelInterface & mongoose.Document;
+export type UserType = UserModelInterface & ModelResInterface;
 
-export type OrderModelType = OrderModelInterface & mongoose.Document;
+export interface ProductModelInterface {
+  name: string;
+  price: number;
+  sku: string;
+  description: string;
+  mediaUrl: string;
+}
 
 export type ProductModelType = ProductModelInterface & mongoose.Document;
+export type ProductType = ProductModelInterface & ModelResInterface;
 
-export type UserModelType = UserModelInterface & mongoose.Document;
+export interface CartModelInterface {
+  user: string;
+  products: [
+    {
+      quantity: number;
+      product: string | ProductModelType;
+    }
+  ];
+}
+
+export type CartModelType = CartModelInterface & mongoose.Document;
+export type CartType = CartModelInterface & ModelResInterface;
+
+export interface OrderModelInterface {
+  user: string;
+  products: [
+    {
+      quantity: number;
+      product: string | ProductModelType;
+    }
+  ];
+  email: string;
+  total: number;
+}
+
+export type OrderModelType = OrderModelInterface & mongoose.Document;
+export type OrderType = OrderModelInterface & ModelResInterface;

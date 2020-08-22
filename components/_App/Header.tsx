@@ -1,22 +1,22 @@
-import { Menu, Container, Image, Icon } from 'semantic-ui-react'
-import Link from 'next/link'
-import Router, { useRouter } from 'next/router'
-import NProgress from 'nprogress'
-import { handleLogout } from '../../utils/auth'
-import { HeaderProps } from './HeaderType'
+import { Menu, Container, Image, Icon } from 'semantic-ui-react';
+import Link from 'next/link';
+import Router, { useRouter } from 'next/router';
+import NProgress from 'nprogress';
+import { handleLogout } from '../../utils/auth';
+import { HeaderProps } from './HeaderType';
 
-Router.events.on('onRouteChangeStart', () => NProgress.start())
-Router.events.on('onRouteChangeComplete', () => NProgress.done())
-Router.events.on('routeChangeError', () => NProgress.done())
+Router.events.on('onRouteChangeStart', () => NProgress.start());
+Router.events.on('onRouteChangeComplete', () => NProgress.done());
+Router.events.on('routeChangeError', () => NProgress.done());
 
 export function Header({ user }: HeaderProps) {
-  const router = useRouter()
-  const isRoot = user && user.role === 'root'
-  const isAdmin = user && user.role === 'admin'
-  const isRootOrAdmin = isRoot || isAdmin
+  const router = useRouter();
+  const isRoot = user && user.role === 'root';
+  const isAdmin = user && user.role === 'admin';
+  const isRootOrAdmin = isRoot || isAdmin;
 
   function isActive(route: string): boolean {
-    return route === router.pathname
+    return route === router.pathname;
   }
 
   return (
@@ -82,5 +82,5 @@ export function Header({ user }: HeaderProps) {
         )}
       </Container>
     </Menu>
-  )
+  );
 }

@@ -1,49 +1,15 @@
-export interface AccountHeaderProps {
-  role: string
-  email: string
-  name: string
-  createdAt: Date
-}
-
-export type mapOrdersToPanelsProps = {
-  _id: string
-  createdAt: Date
-  total: number
-  email: string
-  products: [
-    {
-      product: {
-        _id: string
-        name: string
-        price: number
-        description: string
-        sku: string
-        mediaUrl: string
-      }
-      quantity: number
-    }
-  ]
-}
+import { OrderType, UserType } from '../../models/ModelsType';
 
 export interface AccountOrdersProps {
-  orders: mapOrdersToPanelsProps[]
+  orders: OrderType[];
 }
 
-export interface AccountPermissionsProps {
-  id: string
-}
+// export interface AccountPermissionsProps {
+//   id: string;
+// }
 
-interface UserType {
-  _id: string
-  role: string
-  name: string
-  email: string
-  createdAt: Date
-  updatedAt: Date
-}
-
-export type UsersType = UserType[]
+export type SetUsersType = UserType[];
 
 export interface UserPermissionProps {
-  user: UserType
+  user: UserType;
 }

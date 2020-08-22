@@ -11,16 +11,16 @@ function ProductAttributes({ description, _id, user }) {
   const isAdmin = user && user.role === 'admin';
   const isRootOrAdmin = isRoot || isAdmin;
 
-  async function handleDelete(){
+  async function handleDelete() {
     const url = `${baseUrl}/api/product`;
     const payload = { params: { _id } };
     await axios.delete(url, payload);
     router.push('/');
   }
-  return(
+  return (
     <>
       <Header as="h3">About this product</Header>
-      <p>{ description }</p>
+      <p>{description}</p>
       {isRootOrAdmin && (
         <>
           <Button
@@ -35,10 +35,7 @@ function ProductAttributes({ description, _id, user }) {
               <p>Are you sure you want to delete this product?</p>
             </Modal.Content>
             <Modal.Actions>
-              <Button 
-                content="Cancel"
-                onClick={() => setModal(false)}
-              />
+              <Button content="Cancel" onClick={() => setModal(false)} />
               <Button
                 negative
                 icon="trash"
@@ -51,7 +48,7 @@ function ProductAttributes({ description, _id, user }) {
         </>
       )}
     </>
-  )
+  );
 }
 
 export default ProductAttributes;

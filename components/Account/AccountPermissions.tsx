@@ -1,28 +1,29 @@
-import React from 'react'
-import axios from 'axios'
-import { Header, Table, Icon, Checkbox } from 'semantic-ui-react'
-import baseUrl from '../../utils/baseUrl'
-import cookie from 'js-cookie'
-import formatDate from '../../utils/formatDate'
+import React from 'react';
+import axios from 'axios';
+import { Header, Table, Icon, Checkbox } from 'semantic-ui-react';
+import baseUrl from '../../utils/baseUrl';
+import cookie from 'js-cookie';
+import formatDate from '../../utils/formatDate';
 import {
-  AccountPermissionsProps,
-  UsersType,
+  // AccountPermissionsProps,
+  SetUsersType,
   UserPermissionProps,
-} from './AccountType'
+} from './AccountType';
 
-function AccountPermissions({ id }: AccountPermissionsProps) {
-  const [users, setUsers] = React.useState<UsersType>([])
+// function AccountPermissions({ id }: AccountPermissionsProps) {
+function AccountPermissions() {
+  const [users, setUsers] = React.useState<SetUsersType>([]);
 
   React.useEffect(() => {
-    getUsers()
-  }, [])
+    getUsers();
+  }, []);
 
   async function getUsers() {
-    const url = `${baseUrl}/api/users`
-    const token = cookie.get('token')
-    const payload = { headers: { Authorization: token } }
-    const response = await axios.get<UsersType>(url, payload)
-    setUsers(response.data)
+    const url = `${baseUrl}/api/users`;
+    const token = cookie.get('token');
+    const payload = { headers: { Authorization: token } };
+    const response = await axios.get<SetUsersType>(url, payload);
+    setUsers(response.data);
   }
 
   return (
@@ -44,37 +45,41 @@ function AccountPermissions({ id }: AccountPermissionsProps) {
         </Table.Header>
 
         <Table.Body>
-          {users.map((user) => (
-            <UserPermission key={user._id} user={user} />
-          ))}
+          {() => {
+            if (users.length !== 0) {
+              users.map((user) => (
+                <UserPermission key={user._id} user={user} />
+              ));
+            }
+          }}
         </Table.Body>
       </Table>
     </div>
-  )
+  );
 }
 
 function UserPermission({ user }: UserPermissionProps) {
-  const [admin, setAdmin] = React.useState(user.role === 'admin')
+  const [admin, setAdmin] = React.useState(user.role === 'admin');
 
-  const isFirstRun = React.useRef(true)
+  const isFirstRun = React.useRef(true);
 
   React.useEffect(() => {
     //current = initial setting value = true
     if (isFirstRun.current) {
-      isFirstRun.current = false
-      return
+      isFirstRun.current = false;
+      return;
     }
-    updatePermission()
-  }, [admin])
+    updatePermission();
+  }, [admin]);
 
   function handleChangePermission() {
-    setAdmin((prevState) => !prevState)
+    setAdmin((prevState) => !prevState);
   }
 
   async function updatePermission() {
-    const url = `${baseUrl}/api/account`
-    const payload = { _id: user._id, role: admin ? 'admin' : 'user' }
-    await axios.put(url, payload)
+    const url = `${baseUrl}/api/account`;
+    const payload = { _id: user._id, role: admin ? 'admin' : 'user' };
+    await axios.put(url, payload);
   }
 
   return (
@@ -88,7 +93,7 @@ function UserPermission({ user }: UserPermissionProps) {
       <Table.Cell>{formatDate(user.updatedAt)}</Table.Cell>
       <Table.Cell>{admin ? 'admin' : 'user'}</Table.Cell>
     </Table.Row>
-  )
+  );
 }
 
-export default AccountPermissions
+export default AccountPermissions;

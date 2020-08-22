@@ -1,8 +1,8 @@
-import { Header, Icon, Segment, Label } from 'semantic-ui-react'
-import formatDate from '../../utils/formatDate'
-import { AccountHeaderProps } from './AccountType'
+import { Header, Icon, Segment, Label } from 'semantic-ui-react';
+import formatDate from '../../utils/formatDate';
+import { UserType } from '../../models/ModelsType';
 
-function AccountHeader({ role, email, name, createdAt }: AccountHeaderProps) {
+function AccountHeader({ role, email, name, createdAt }: UserType) {
   return (
     <Segment secondary inverted color="violet">
       <Label
@@ -20,7 +20,7 @@ function AccountHeader({ role, email, name, createdAt }: AccountHeaderProps) {
         <Header.Subheader>Joined {formatDate(createdAt)}</Header.Subheader>
       </Header>
     </Segment>
-  )
+  );
 }
 
-export default AccountHeader
+export default AccountHeader;

@@ -1,10 +1,10 @@
-import React from 'react'
-import Head from 'next/head'
-import { Container } from 'semantic-ui-react'
+import React from 'react';
+import Head from 'next/head';
+import { Container } from 'semantic-ui-react';
 
-import { Header } from './Header'
-import { HeadContent } from './HeadContent'
-import { HeaderProps } from './HeaderType'
+import { Header } from './Header';
+import { HeadContent } from './HeadContent';
+import { HeaderProps } from './HeaderType';
 
 export function Layout({
   children,
@@ -21,12 +21,12 @@ export function Layout({
           rel="stylesheet"
           href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"
         />
-        <title>ReactReserve</title>
+        <title>MernWithTsApp</title>
       </Head>
       <Header user={user} />
       <Container text style={{ paddingTop: '1em' }}>
         {children}
       </Container>
     </>
-  )
+  );
 }

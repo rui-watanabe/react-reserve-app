@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Header,
   Accordion,
@@ -7,15 +8,17 @@ import {
   Button,
   List,
   Image,
-} from 'semantic-ui-react'
-import { useRouter } from 'next/router'
-import formatDate from '../../utils/formatDate'
-import { AccountOrdersProps, mapOrdersToPanelsProps } from './AccountType'
+} from 'semantic-ui-react';
+import { useRouter } from 'next/router';
+import formatDate from '../../utils/formatDate';
+import { AccountOrdersProps } from './AccountType';
+import { OrderType, ProductModelInterface } from '../../models/ModelsType';
 
 function AccountOrders({ orders }: AccountOrdersProps) {
-  const router = useRouter()
+  const router = useRouter();
+  let mapProduct: ProductModelInterface;
 
-  function mapOrdersToPanels(orders: mapOrdersToPanelsProps[]) {
+  function mapOrdersToPanels(orders: OrderType[]) {
     return orders.map((order) => ({
       key: order._id,
       title: {
@@ -35,27 +38,32 @@ function AccountOrders({ orders }: AccountOrdersProps) {
               />
             </List.Header>
             <List>
-              {order.products.map((p) => (
-                <List.Item key={p.product._id}>
-                  <Image avatar src={p.product.mediaUrl} />
-                  <List.Content>
-                    <List.Header>{p.product.name}</List.Header>
-                    <List.Description>
-                      {p.quantity} ・ ${p.product.price}
-                    </List.Description>
-                  </List.Content>
-                  <List.Content floated="right">
-                    <Label tag color="red" size="tiny">
-                      {p.product.sku}
-                    </Label>
-                  </List.Content>
-                </List.Item>
-              ))}
+              {order.products.map((p) => {
+                if (typeof p.product !== 'string') {
+                  mapProduct = p.product;
+                  return (
+                    <List.Item key={p.product._id}>
+                      <Image avatar src={p.product.mediaUrl} />
+                      <List.Content>
+                        <List.Header>{p.product.name}</List.Header>
+                        <List.Description>
+                          {p.quantity} ・ ${p.product.price}
+                        </List.Description>
+                      </List.Content>
+                      <List.Content floated="right">
+                        <Label tag color="red" size="tiny">
+                          {p.product.sku}
+                        </Label>
+                      </List.Content>
+                    </List.Item>
+                  );
+                }
+              })}
             </List>
           </>
         ),
       },
-    }))
+    }));
   }
 
   return (
@@ -85,7 +93,7 @@ function AccountOrders({ orders }: AccountOrdersProps) {
         />
       )}
     </>
-  )
+  );
 }
 
-export default AccountOrders
+export default AccountOrders;
