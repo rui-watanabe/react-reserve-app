@@ -7,7 +7,8 @@ import {
   Message,
 } from 'semantic-ui-react';
 import { useRouter } from 'next/router';
-import { CartItemListProps, CartProductsType } from './CartType';
+import { CartItemListProps } from './CartType';
+import { CartProductType } from './CartType';
 
 function CartItemList({
   products,
@@ -17,7 +18,7 @@ function CartItemList({
 }: CartItemListProps) {
   const router = useRouter();
 
-  function mapCreateProductsToItems(products: CartProductsType) {
+  function mapCreateProductsToItems(products: CartProductType) {
     return products.map((p) => ({
       childKey: p.product._id,
       header: (
