@@ -1,10 +1,11 @@
 import User from '../../models/UserModel/User';
-import jwt from 'jsonwebtoken';
+import jwt, { VerifyCallback } from 'jsonwebtoken';
 import connectDB from '../../utils/connectDb';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 connectDB();
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   switch (req.method) {
     case 'GET':
       await handleGetRequest(req, res);
@@ -18,10 +19,16 @@ export default async (req, res) => {
   }
 };
 
-async function handleGetRequest(req, res) {
+async function handleGetRequest(req: NextApiRequest, res: NextApiResponse) {
   //!req.headers.authorization
   if (!('authorization' in req.headers)) {
     return res.status(401).send('No authorization token');
+  }
+  if (typeof req.headers.authorization !== 'string') {
+    return res.status(401).send('Not string type authorization token');
+  }
+  if (typeof process.env.JWT_SECRET !== 'string') {
+    return res.status(401).send('Not string type authorization token');
   }
   try {
     const { userId } = jwt.verify(
@@ -39,7 +46,7 @@ async function handleGetRequest(req, res) {
   }
 }
 
-async function handlePutRequest(req, res) {
+async function handlePutRequest(req: NextApiRequest, res: NextApiResponse) {
   const { _id, role } = req.body;
   await User.findOneAndUpdate({ _id }, { role });
   res.status(204).send('User updated');

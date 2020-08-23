@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add --dev @type/mongoose
+  /usr/local/bin/node /usr/local/bin/yarn add --dev @types/jswebtoken
 
 PATH: 
   /usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/bin:/Users/watar/go/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@type%2fmongoose: Not found
+  Error: https://registry.yarnpkg.com/@types%2fjswebtoken: Not found
       at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66987:18)
       at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140748:22)
       at Request.emit (events.js:210:5)
@@ -61,9 +61,12 @@ npm manifest:
     },
     "devDependencies": {
       "@types/js-cookie": "^2.2.6",
+      "@types/mongoose": "^5.7.36",
       "@types/node": "^14.0.27",
+      "@types/nprogress": "^0.2.0",
       "@types/react": "^16.9.46",
       "@types/react-dom": "^16.9.8",
+      "@types/shortid": "^0.0.29",
       "typescript": "^3.9.7"
     }
   }
@@ -1131,6 +1134,13 @@ Lockfile:
       exenv "^1.2.2"
       prop-types "^15.6.2"
   
+  "@types/bson@*":
+    version "4.0.2"
+    resolved "https://registry.yarnpkg.com/@types/bson/-/bson-4.0.2.tgz#7accb85942fc39bbdb7515d4de437c04f698115f"
+    integrity sha512-+uWmsejEHfmSjyyM/LkrP0orfE2m5Mx9Xel4tXNeqi1ldK5XMQcDsFkBmLDtuyKUbxj2jGDo0H240fbCRJZo7Q==
+    dependencies:
+      "@types/node" "*"
+  
   "@types/color-name@^1.1.1":
     version "1.1.1"
     resolved "https://registry.yarnpkg.com/@types/color-name/-/color-name-1.1.1.tgz#1c1261bbeaa10a8055bbc5d8ab84b7b2afc846a0"
@@ -1146,10 +1156,36 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.5.tgz#dcce4430e64b443ba8945f0290fb564ad5bac6dd"
     integrity sha512-7+2BITlgjgDhH0vvwZU/HZJVyk+2XUlvxXe8dFMedNX/aMkaOq++rMAFXc0tM7ij15QaWlbdQASBR9dihi+bDQ==
   
+  "@types/mongodb@*":
+    version "3.5.26"
+    resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.5.26.tgz#aa10315925ba10cdc7931ef280c0ff6f54fd37f3"
+    integrity sha512-p0X2VJgIBNHfNBdZdzzG8eQ/3bf6mQoXDT0UhVyVEdSzXEa1+2pFcwGvEZp72sjztyBwfRKlgrXMjCVavLcuGg==
+    dependencies:
+      "@types/bson" "*"
+      "@types/node" "*"
+  
+  "@types/mongoose@^5.7.36":
+    version "5.7.36"
+    resolved "https://registry.yarnpkg.com/@types/mongoose/-/mongoose-5.7.36.tgz#2dae28c63041c6afba8a83ea02969f463b3f1021"
+    integrity sha512-ggFXgvkHgCNlT35B9d/heDYfSqOSwTmQjkRoR32sObGV5Xjd0N0WWuYlLzqeCg94j4hYN/OZxZ1VNNLltX/IVQ==
+    dependencies:
+      "@types/mongodb" "*"
+      "@types/node" "*"
+  
+  "@types/node@*":
+    version "14.6.0"
+    resolved "https://registry.yarnpkg.com/@types/node/-/node-14.6.0.tgz#7d4411bf5157339337d7cff864d9ff45f177b499"
+    integrity sha512-mikldZQitV94akrc4sCcSjtJfsTKt4p+e/s0AGscVA6XArQ9kFclP+ZiYUMnq987rc6QlYxXv/EivqlfSLxpKA==
+  
   "@types/node@^14.0.27":
     version "14.0.27"
     resolved "https://registry.yarnpkg.com/@types/node/-/node-14.0.27.tgz#a151873af5a5e851b51b3b065c9e63390a9e0eb1"
     integrity sha512-kVrqXhbclHNHGu9ztnAwSncIgJv/FaxmzXJvGXNdcCpV1b8u1/Mi6z6m0vwy0LzKeXFTPLH0NzwmoJ3fNCIq0g==
+  
+  "@types/nprogress@^0.2.0":
+    version "0.2.0"
+    resolved "https://registry.yarnpkg.com/@types/nprogress/-/nprogress-0.2.0.tgz#86c593682d4199212a0509cc3c4d562bbbd6e45f"
+    integrity sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==
   
   "@types/prop-types@*":
     version "15.7.3"
@@ -1170,6 +1206,11 @@ Lockfile:
     dependencies:
       "@types/prop-types" "*"
       csstype "^3.0.2"
+  
+  "@types/shortid@^0.0.29":
+    version "0.0.29"
+    resolved "https://registry.yarnpkg.com/@types/shortid/-/shortid-0.0.29.tgz#8093ee0416a6e2bf2aa6338109114b3fbffa0e9b"
+    integrity sha1-gJPuBBam4r8qpjOBCRFLP7/6Dps=
   
   "@webassemblyjs/ast@1.9.0":
     version "1.9.0"

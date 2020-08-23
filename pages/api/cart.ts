@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
-import Cart from '../../models/CartModel/Cart';
-import connectDB from '../../models/CartModel/Cart';
+import Cart from '../../models/Cart';
+import connectDB from '../../models/Cart';
 
 connectDB();
 
