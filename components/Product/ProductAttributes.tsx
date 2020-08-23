@@ -3,9 +3,10 @@ import { Header, Button, Modal } from 'semantic-ui-react';
 import axios from 'axios';
 import baseUrl from '../../utils/baseUrl';
 import { useRouter } from 'next/router';
+import { ProductAttributesProps } from './ProductType';
 
-function ProductAttributes({ description, _id, user }) {
-  const [modal, setModal] = React.useState(false);
+function ProductAttributes({ description, _id, user }: ProductAttributesProps) {
+  const [modal, setModal] = React.useState<boolean>(false);
   const router = useRouter();
   const isRoot = user && user.role === 'root';
   const isAdmin = user && user.role === 'admin';

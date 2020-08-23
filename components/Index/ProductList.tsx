@@ -1,5 +1,5 @@
 import { Card } from 'semantic-ui-react';
-import { ProductListProps } from './ProductType';
+import { ProductListProps } from './IndexType';
 import { ProductModelType } from '../../models/ProductModel/ProductType';
 
 function ProductList({ products }: ProductListProps) {

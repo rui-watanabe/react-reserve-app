@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { Container, Pagination } from 'semantic-ui-react';
-import { ProductPageNationProps } from './ProductType';
+import { ProductPageNationProps } from './IndexType';
 
 function ProductPagination({ totalPages }: ProductPageNationProps) {
   const router = useRouter();

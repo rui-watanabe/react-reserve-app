@@ -1,8 +1,16 @@
 import { Item, Label } from 'semantic-ui-react';
 import AddProductToCart from './AddProductToCart';
+import { ProductSummaryProps } from './ProductType';
 
-function ProductSummary({ name, mediaUrl, _id, price, sku, user }) {
-  return(
+function ProductSummary({
+  name,
+  mediaUrl,
+  _id,
+  price,
+  sku,
+  user,
+}: ProductSummaryProps) {
+  return (
     <Item.Group>
       <Item>
         <Item.Image size="medium" src={mediaUrl} />
@@ -18,7 +26,7 @@ function ProductSummary({ name, mediaUrl, _id, price, sku, user }) {
         </Item.Content>
       </Item>
     </Item.Group>
-  )
+  );
 }
 
 export default ProductSummary;
