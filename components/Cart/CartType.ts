@@ -1,14 +1,9 @@
-import { Token } from 'react-stripe-checkout';
-import { ProductModelType } from '../../models/ProductModel/ProductType';
 import { UserModelType } from '../../models/UserModel/UserType';
+import { CartProductType } from '../../pagesType/CartType';
+import { Token } from 'react-stripe-checkout';
 
-type handleRemoveFromCart = (productId: string) => void;
 type handleCheckoutFuncType = (token: Token) => void;
-
-export type CartProductType = {
-  quantity: number;
-  product: ProductModelType;
-}[];
+type handleRemoveFromCart = (productId: string) => void;
 
 export interface CartItemListProps {
   products: CartProductType;
@@ -18,10 +13,7 @@ export interface CartItemListProps {
 }
 
 export interface CartSummaryProps {
-  products: {
-    product: ProductModelType;
-  }[];
-  user: UserModelType;
+  products: CartProductType;
   handleCheckout: handleCheckoutFuncType;
   success: boolean;
 }
