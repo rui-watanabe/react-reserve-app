@@ -1,13 +1,16 @@
 import mongoose from 'mongoose';
 import jwt from 'jsonwebtoken';
-import Cart from '../../models/Cart';
-import connectDB from '../../models/Cart';
+import Cart from '../../models/CartModel/Cart';
+import connectDB from '../../utils/connectDb';
+import { NextApiResponse, NextApiRequest } from 'next';
+import { CartModelType } from '../../models/CartModel/CartType';
+import { stringify } from 'querystring';
 
 connectDB();
 
 const { ObjectId } = mongoose.Types;
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   switch (req.method) {
     case 'GET':
       await handleGetRequest(req, res);
@@ -24,16 +27,21 @@ export default async (req, res) => {
   }
 };
 
-async function handleGetRequest(req, res) {
+async function handleGetRequest(req: NextApiRequest, res: NextApiResponse) {
   if (!('authorization' in req.headers)) {
-    return res.status(401).send('No authorization token');
+    return res.status(401).send('Not defined authorization token');
+  } else if (typeof req.headers.authorization !== 'string') {
+    return res.status(401).send('Not string authorization token type');
+  } else if (typeof process.env.JWT_SECRET !== 'string') {
+    return res.status(401).send('Not string secret key type');
   }
+
   try {
     const { userId } = jwt.verify(
       req.headers.authorization,
       process.env.JWT_SECRET
     );
-    const cart = await Cart.findOne({ user: userId }).populate({
+    const cart: CartModelType = await Cart.findOne({ user: userId }).populate({
       //find product information from unique product id
       path: 'products.product',
       model: 'Product',
@@ -45,22 +53,38 @@ async function handleGetRequest(req, res) {
   }
 }
 
-async function handlePutRequest(req, res) {
-  const { quantity, productId } = req.body;
+async function handlePutRequest(req: NextApiRequest, res: NextApiResponse) {
+  const {
+    quantity,
+    productId,
+  }: { quantity: number; productId: string } = req.body;
+
+  let isObjectId = true;
+
   if (!('authorization' in req.headers)) {
-    return res.status(401).send('No authorization token');
+    return res.status(401).send('Not defined authorization token');
+  } else if (typeof req.headers.authorization !== 'string') {
+    return res.status(401).send('Not string authorization token type');
+  } else if (typeof process.env.JWT_SECRET !== 'string') {
+    return res.status(401).send('Not string secret key type');
   }
+
   try {
     const { userId } = jwt.verify(
       req.headers.authorization,
       process.env.JWT_SECRET
     );
     // Get user cart based on userId
-    const cart = await Cart.findOne({ user: userId });
+    const cart: CartModelType = await Cart.findOne({ user: userId });
     // Check if product already exists in cart
-    const productExists = cart.products.some((document) =>
-      ObjectId(productId).equals(document.product)
-    );
+    const productExists = cart.products.some((document) => {
+      typeof document.product === 'string'
+        ? ObjectId(productId).equals(document.product)
+        : (isObjectId = false);
+    });
+    if (!isObjectId) {
+      return res.status(401).send('Not string product`s objectId type');
+    }
     // if so, increment quantity (by number provided to request)
     if (productExists) {
       await Cart.findOneAndUpdate(
@@ -82,11 +106,17 @@ async function handlePutRequest(req, res) {
   }
 }
 
-async function handleDeleteRequest(req, res) {
+async function handleDeleteRequest(req: NextApiRequest, res: NextApiResponse) {
   const { productId } = req.query;
+
   if (!('authorization' in req.headers)) {
-    return res.status(401).send('No authorization token');
+    return res.status(401).send('Not defined authorization token');
+  } else if (typeof req.headers.authorization !== 'string') {
+    return res.status(401).send('Not string authorization token type');
+  } else if (typeof process.env.JWT_SECRET !== 'string') {
+    return res.status(401).send('Not string secret key type');
   }
+
   try {
     const { userId } = jwt.verify(
       req.headers.authorization,

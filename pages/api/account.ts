@@ -2,6 +2,7 @@ import User from '../../models/UserModel/User';
 import jwt, { VerifyCallback } from 'jsonwebtoken';
 import connectDB from '../../utils/connectDb';
 import { NextApiRequest, NextApiResponse } from 'next';
+import { envVerify } from '../../utils/envVerify';
 
 connectDB();
 
@@ -22,14 +23,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 async function handleGetRequest(req: NextApiRequest, res: NextApiResponse) {
   //!req.headers.authorization
   if (!('authorization' in req.headers)) {
-    return res.status(401).send('No authorization token');
+    return res.status(401).send('Not defined authorization token');
+  } else if (typeof req.headers.authorization !== 'string') {
+    return res.status(401).send('Not string authorization token type');
+  } else if (typeof process.env.JWT_SECRET !== 'string') {
+    return res.status(401).send('Not string secret key type');
   }
-  if (typeof req.headers.authorization !== 'string') {
-    return res.status(401).send('Not string type authorization token');
-  }
-  if (typeof process.env.JWT_SECRET !== 'string') {
-    return res.status(401).send('Not string type authorization token');
-  }
+
   try {
     const { userId } = jwt.verify(
       req.headers.authorization,

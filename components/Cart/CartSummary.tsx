@@ -23,7 +23,7 @@ function CartSummary({ products, handleCheckout, success }: CartSummaryProps) {
     stripeKey = '';
   }
 
-  stripeKey != '' ? (
+  return stripeKey != '' ? (
     <>
       <Divider />
       <Segment clearing size="large">

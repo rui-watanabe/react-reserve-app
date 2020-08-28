@@ -1086,7 +1086,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/mongodb@*":
+"@types/mongodb@*", "@types/mongodb@^3.5.26":
   version "3.5.26"
   resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.5.26.tgz#aa10315925ba10cdc7931ef280c0ff6f54fd37f3"
   integrity sha512-p0X2VJgIBNHfNBdZdzzG8eQ/3bf6mQoXDT0UhVyVEdSzXEa1+2pFcwGvEZp72sjztyBwfRKlgrXMjCVavLcuGg==

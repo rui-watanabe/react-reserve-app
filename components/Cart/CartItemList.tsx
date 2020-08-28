@@ -8,7 +8,7 @@ import {
 } from 'semantic-ui-react';
 import { useRouter } from 'next/router';
 import { CartItemListProps } from './CartType';
-import { CartProductType } from './CartType';
+import { CartProductType } from '../../pagesType/CartType';
 
 function CartItemList({
   products,
