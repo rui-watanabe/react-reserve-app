@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent, FormEvent } from "react";
 import {
   Form,
   Input,
@@ -33,13 +33,16 @@ function CreateProduct() {
     isProduct ? setDisabled(false) : setDisabled(true);
   }, [product]);
 
-  function handleChange(event) {
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value, files } = event.target;
-    if (name === "media") {
-      setProduct((prevState) => ({ ...prevState, media: files[0] }));
-      setMediaPreview(window.URL.createObjectURL(files[0]));
-    } else {
-      setProduct((prevState) => ({ ...prevState, [name]: value }));
+    if(name && value && files)
+    {
+      if (name === "media") {
+        setProduct((prevState) => ({ ...prevState, media: String(files[0]) }));
+        setMediaPreview(window.URL.createObjectURL(files[0]));
+      } else {
+        setProduct((prevState) => ({ ...prevState, [name]: value }));
+      }
     }
   }
 
@@ -48,12 +51,12 @@ function CreateProduct() {
     data.append("file", product.media);
     data.append("upload_preset", "reactreserve");
     data.append("cloud_name", "reedbargercodes");
-    const response = await axios.post(process.env.CLOUDINARY_URL, data);
+    const response = await axios.post(String(process.env.CLOUDINARY_URL), data);
     const mediaUrl = response.data.url;
     return mediaUrl;
   }
 
-  async function handleSubmit(event) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     try {
       event.preventDefault();
       setLoading(true);

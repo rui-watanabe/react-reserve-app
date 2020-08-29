@@ -1,14 +1,25 @@
 import Stripe from 'stripe';
-import uuidv4 from 'uuid/v4';
+import uuid from 'uuid';
 import jwt from 'jsonwebtoken';
 import Cart from '../../models/CartModel/Cart';
 import Order from '../../models/OrderModel/Order';
 import calculateCartTotal from '../../utils/calculateCartTotal';
+import { NextApiRequest, NextApiResponse } from 'next';
 
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe(String(process.env.STRIPE_SECRET_KEY));
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { paymentData } = req.body;
+
+  if (!('authorization' in req.headers)) {
+    return res.status(401).send('Not defined authorization token');
+  } else if (typeof req.headers.authorization !== 'string') {
+    return res.status(401).send('Not string authorization token type');
+  } else if (typeof process.env.JWT_SECRET !== 'string') {
+    return res.status(401).send('Not string secret key type');
+  } else if(!stripe) {
+    return res.status(401).send('Missing set stripe key');
+  }
 
   try {
     // 1) Verify and get user id from token
@@ -38,7 +49,7 @@ export default async (req, res) => {
       });
     }
     const customer =
-      (isExistingCustomer && prevCustomer.data[0].id) || newCustomer.id;
+      (isExistingCustomer && prevCustomer.data[0].id) || newCustomer?.id;
     // 6) Create charge with total, send receipt email
     const charge = await stripe.charges.create(
       {
@@ -49,7 +60,7 @@ export default async (req, res) => {
         description: `Checkout | ${paymentData.email} | ${paymentData.id}`,
       },
       {
-        idempotency_key: uuidv4(),
+        idempotency_key: uuid.v4(),
       }
     );
     // 7) Add order data to database

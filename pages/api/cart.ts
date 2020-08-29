@@ -4,7 +4,6 @@ import Cart from '../../models/CartModel/Cart';
 import connectDB from '../../utils/connectDb';
 import { NextApiResponse, NextApiRequest } from 'next';
 import { CartModelType } from '../../models/CartModel/CartType';
-import { stringify } from 'querystring';
 
 connectDB();
 
@@ -89,14 +88,14 @@ async function handlePutRequest(req: NextApiRequest, res: NextApiResponse) {
     if (productExists) {
       await Cart.findOneAndUpdate(
         { _id: cart._id, 'products.product': productId },
-        { $inc: { 'products.$.quantity': quantity } }
+        { $inc: { 'products.$.quantity': quantity }  }
       );
     } else {
       // if not, add new product with given quantity
       const newProduct = { quantity, product: productId };
       await Cart.findOneAndUpdate(
         { _id: cart._id },
-        { $addToSet: { products: newProduct } }
+        { $addToSet: { products: newProduct } as {}}
       );
     }
     res.status(200).send('Cart Updated');
@@ -124,7 +123,7 @@ async function handleDeleteRequest(req: NextApiRequest, res: NextApiResponse) {
     );
     const cart = await Cart.findOneAndUpdate(
       { user: userId },
-      { $pull: { products: { product: productId } } },
+      { $pull: { products: { product: productId } }},
       { new: true }
     ).populate({
       path: 'products.product',

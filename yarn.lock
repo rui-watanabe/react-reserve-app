@@ -1086,7 +1086,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/mongodb@*", "@types/mongodb@^3.5.26":
+"@types/mongodb@*":
   version "3.5.26"
   resolved "https://registry.yarnpkg.com/@types/mongodb/-/mongodb-3.5.26.tgz#aa10315925ba10cdc7931ef280c0ff6f54fd37f3"
   integrity sha512-p0X2VJgIBNHfNBdZdzzG8eQ/3bf6mQoXDT0UhVyVEdSzXEa1+2pFcwGvEZp72sjztyBwfRKlgrXMjCVavLcuGg==
@@ -1141,6 +1141,18 @@
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/shortid/-/shortid-0.0.29.tgz#8093ee0416a6e2bf2aa6338109114b3fbffa0e9b"
   integrity sha1-gJPuBBam4r8qpjOBCRFLP7/6Dps=
+
+"@types/stripe@^7.13.24":
+  version "7.13.24"
+  resolved "https://registry.yarnpkg.com/@types/stripe/-/stripe-7.13.24.tgz#a82416d949bad90bc283db399958fa0c3cbe41a3"
+  integrity sha512-jlY9nvZMHSikta0udPubW5HcIl3C9waWPHqAi2oCL9dn91rwJLfKp/A9b7Trif+YTOv0StACk1gGLyBSgXQNmA==
+  dependencies:
+    "@types/node" "*"
+
+"@types/uuid@^8.3.0":
+  version "8.3.0"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.0.tgz#215c231dff736d5ba92410e6d602050cce7e273f"
+  integrity sha512-eQ9qFW/fhfGJF8WKHGEHZEyVWfZxrT+6CLIJGBcZPfxUh/+BnEj+UCGYMlr9qZuX/2AltsvwrGqp0LhEW8D0zQ==
 
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"

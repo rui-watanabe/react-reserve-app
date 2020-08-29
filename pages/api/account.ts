@@ -2,7 +2,6 @@ import User from '../../models/UserModel/User';
 import jwt, { VerifyCallback } from 'jsonwebtoken';
 import connectDB from '../../utils/connectDb';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { envVerify } from '../../utils/envVerify';
 
 connectDB();
 

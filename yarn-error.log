@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add --dev @types/jswebtoken
+  /usr/local/bin/node /usr/local/bin/yarn add --dev @types/uuid/v4
 
 PATH: 
   /usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/bin:/Users/watar/go/bin
@@ -14,8 +14,8 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fjswebtoken: Not found
-      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66987:18)
+  Error: https://registry.yarnpkg.com/@types%2fuuid/v4: Request "https://registry.yarnpkg.com/@types%2fuuid/v4" returned a 405
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66996:18)
       at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140748:22)
       at Request.emit (events.js:210:5)
       at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141720:10)
@@ -61,6 +61,7 @@ npm manifest:
     },
     "devDependencies": {
       "@types/js-cookie": "^2.2.6",
+      "@types/jsonwebtoken": "^8.5.0",
       "@types/mongoose": "^5.7.36",
       "@types/node": "^14.0.27",
       "@types/nprogress": "^0.2.0",
@@ -1155,6 +1156,13 @@ Lockfile:
     version "7.0.5"
     resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.5.tgz#dcce4430e64b443ba8945f0290fb564ad5bac6dd"
     integrity sha512-7+2BITlgjgDhH0vvwZU/HZJVyk+2XUlvxXe8dFMedNX/aMkaOq++rMAFXc0tM7ij15QaWlbdQASBR9dihi+bDQ==
+  
+  "@types/jsonwebtoken@^8.5.0":
+    version "8.5.0"
+    resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-8.5.0.tgz#2531d5e300803aa63279b232c014acf780c981c5"
+    integrity sha512-9bVao7LvyorRGZCw0VmH/dr7Og+NdjYSsKAxB43OQoComFbBgsEpoR9JW6+qSq/ogwVBg8GI2MfAlk4SYI4OLg==
+    dependencies:
+      "@types/node" "*"
   
   "@types/mongodb@*":
     version "3.5.26"
