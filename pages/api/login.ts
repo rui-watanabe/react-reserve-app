@@ -2,10 +2,11 @@ import connectDB from '../../utils/connectDb';
 import User from '../../models/UserModel/User';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 connectDB();
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { email, password } = req.body;
   try {
     // 1) check to see if a user exits with the provided email(+password is previous fields)
