@@ -15,10 +15,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(401).send('Not defined authorization token');
   } else if (typeof req.headers.authorization !== 'string') {
     return res.status(401).send('Not string authorization token type');
-  } else if (typeof process.env.JWT_SECRET !== 'string') {
-    return res.status(401).send('Not string secret key type');
-  } else if(!stripe) {
-    return res.status(401).send('Missing set stripe key');
   }
 
   try {
