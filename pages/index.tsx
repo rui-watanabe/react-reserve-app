@@ -3,8 +3,10 @@ import axios from "axios";
 import ProductList from "../components/Index/ProductList";
 import ProductPagination from "../components/Index/ProductPagination";
 import baseUrl from "../utils/baseUrl";
+import { NextPageContext } from "next";
+import { homeProps } from "../pagesType/IndexType";
 
-function Home({ products, totalPages }) {
+function Home({ products, totalPages }: homeProps) {
   return (
     <>
       <ProductList products={products} />
@@ -13,7 +15,7 @@ function Home({ products, totalPages }) {
   );
 }
 
-Home.getInitialProps = async (ctx) => {
+Home.getInitialProps = async (ctx: NextPageContext) => {
   const page = ctx.query.page ? ctx.query.page : "1";
   const size = 9;
   const payload = { params: { page, size } };
