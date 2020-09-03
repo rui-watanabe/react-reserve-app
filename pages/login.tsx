@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FormEvent, ChangeEvent } from "react";
 import { Button, Form, Icon, Message, Segment } from "semantic-ui-react";
 import Link from "next/link";
 import catchErrors from "../utils/catchErrors";
@@ -22,12 +22,12 @@ function Login() {
     isUser ? setDisabled(false) : setDisabled(true);
   }, [user]);
 
-  function handleChange(event) {
+  function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value } = event.target;
     setUser((prevState) => ({ ...prevState, [name]: value }));
   }
 
-  async function handleSubmit(event) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     try {
       setLoading(true);
