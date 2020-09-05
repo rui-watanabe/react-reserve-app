@@ -1,7 +1,10 @@
-function catchErrors(error, displayError){
+import { Dispatch, SetStateAction } from "react";
+import { AxiosError } from "axios";
+
+function catchErrors(error: AxiosError, displayError: Dispatch<SetStateAction<string>>){
   let errorMsg;
   if(error.response){
-    //The request was made and the server responsed with a status code 
+    //The request was made and the server responsed with a status code
     //that is not in the range pf 2xx
     errorMsg = error.response.data;
     console.error("Error response", errorMsg)
