@@ -57,7 +57,7 @@ function AccountOrders({ orders }: AccountOrdersProps) {
                 ) : (
                   <Message negative>
                     <Message.Header>
-                      We're sorry we can't apply that discount
+                      We`re sorry we can`t apply that discount
                     </Message.Header>
                     <p>Setting Product ObjectId error!</p>
                   </Message>

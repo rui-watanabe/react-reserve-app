@@ -1,5 +1,5 @@
 import User from '../../models/UserModel/User';
-import jwt, { VerifyCallback } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import connectDB from '../../utils/connectDb';
 import { NextApiRequest, NextApiResponse } from 'next';
 
@@ -30,7 +30,7 @@ async function handleGetRequest(req: NextApiRequest, res: NextApiResponse) {
   try {
     const { userId } = jwt.verify(
       req.headers.authorization,
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET,
     );
     const user = await User.findOne({ _id: userId });
     if (user) {

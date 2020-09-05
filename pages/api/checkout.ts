@@ -21,7 +21,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     // 1) Verify and get user id from token
     const { userId } = jwt.verify(
       req.headers.authorization,
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET,
     );
     // 2) Find cart based on user id, populate it
     const cart = await Cart.findOne({ user: userId }).populate({
@@ -47,7 +47,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     const customer =
       (isExistingCustomer && prevCustomer.data[0].id) || newCustomer?.id;
     // 6) Create charge with total, send receipt email
-    const charge = await stripe.charges.create(
+    // const charge = await stripe.charges.create(
+    //   {
+    //     currency: 'usd',
+    //     amount: stripeTotal,
+    //     receipt_email: paymentData.email,
+    //     customer,
+    //     description: `Checkout | ${paymentData.email} | ${paymentData.id}`,
+    //   },
+    //   {
+    //     idempotency_key: uuid.v4(),
+    //   },
+    // );
+    await stripe.charges.create(
       {
         currency: 'usd',
         amount: stripeTotal,
@@ -57,7 +69,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       },
       {
         idempotency_key: uuid.v4(),
-      }
+      },
     );
     // 7) Add order data to database
     await new Order({

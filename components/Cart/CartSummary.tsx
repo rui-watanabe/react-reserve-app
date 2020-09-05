@@ -52,7 +52,7 @@ function CartSummary({ products, handleCheckout, success }: CartSummaryProps) {
     </>
   ) : (
     <Message negative>
-      <Message.Header>We're sorry we can't apply that discount</Message.Header>
+      <Message.Header>We`re sorry we can`t apply that discount</Message.Header>
       <p>Setting ENV error!</p>
     </Message>
   );

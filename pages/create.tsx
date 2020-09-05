@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent } from "react";
+import React, { ChangeEvent, FormEvent } from 'react';
 import {
   Form,
   Input,
@@ -8,25 +8,25 @@ import {
   Message,
   Header,
   Icon,
-} from "semantic-ui-react";
-import axios from "axios";
-import baseUrl from "../utils/baseUrl";
-import catchErrors from "../utils/catchErrors";
+} from 'semantic-ui-react';
+import axios from 'axios';
+import baseUrl from '../utils/baseUrl';
+import catchErrors from '../utils/catchErrors';
 
 const INITIAL_PRODUCT = {
-  name: "",
-  price: "",
-  media: "",
-  description: "",
+  name: '',
+  price: '',
+  media: '',
+  description: '',
 };
 
 function CreateProduct() {
   const [product, setProduct] = React.useState(INITIAL_PRODUCT);
-  const [mediaPreview, setMediaPreview] = React.useState("");
+  const [mediaPreview, setMediaPreview] = React.useState('');
   const [success, setSuccess] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [disabled, setDisabled] = React.useState(true);
-  const [error, setError] = React.useState("");
+  const [error, setError] = React.useState('');
 
   React.useEffect(() => {
     const isProduct = Object.values(product).every((el) => Boolean(el));
@@ -35,9 +35,8 @@ function CreateProduct() {
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value, files } = event.target;
-    if(name && value && files)
-    {
-      if (name === "media") {
+    if (name && value && files) {
+      if (name === 'media') {
         setProduct((prevState) => ({ ...prevState, media: String(files[0]) }));
         setMediaPreview(window.URL.createObjectURL(files[0]));
       } else {
@@ -48,9 +47,9 @@ function CreateProduct() {
 
   async function handleImageUpload() {
     const data = new FormData();
-    data.append("file", product.media);
-    data.append("upload_preset", "reactreserve");
-    data.append("cloud_name", "reedbargercodes");
+    data.append('file', product.media);
+    data.append('upload_preset', 'reactreserve');
+    data.append('cloud_name', 'reedbargercodes');
     const response = await axios.post(String(process.env.CLOUDINARY_URL), data);
     const mediaUrl = response.data.url;
     return mediaUrl;
@@ -60,7 +59,7 @@ function CreateProduct() {
     try {
       event.preventDefault();
       setLoading(true);
-      setError("");
+      setError('');
       const mediaUrl = await handleImageUpload();
       const url = `${baseUrl}/api/product`;
       const { name, price, description } = product;

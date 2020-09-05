@@ -1,22 +1,22 @@
-import React, { FormEvent, ChangeEvent } from "react";
-import { Button, Form, Icon, Message, Segment } from "semantic-ui-react";
-import Link from "next/link";
-import catchErrors from "../utils/catchErrors";
-import baseUrl from "../utils/baseUrl";
-import axios from "axios";
-import { handleLogin } from "../utils/auth";
+import React, { FormEvent, ChangeEvent } from 'react';
+import { Button, Form, Icon, Message, Segment } from 'semantic-ui-react';
+import Link from 'next/link';
+import catchErrors from '../utils/catchErrors';
+import baseUrl from '../utils/baseUrl';
+import axios from 'axios';
+import { handleLogin } from '../utils/auth';
 
 const INITIAL_USER = {
-  name: "",
-  email: "",
-  password: "",
+  name: '',
+  email: '',
+  password: '',
 };
 
 function Signup() {
   const [user, setUser] = React.useState(INITIAL_USER);
   const [disabled, setDisabled] = React.useState(true);
   const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState("");
+  const [error, setError] = React.useState('');
 
   React.useEffect(() => {
     const isUser = Object.values(user).every((el) => Boolean(el));
@@ -32,7 +32,7 @@ function Signup() {
     event.preventDefault();
     try {
       setLoading(true);
-      setError("");
+      setError('');
       const url = `${baseUrl}/api/signup`;
       const payload = { ...user };
       const response = await axios.post(url, payload);
@@ -99,11 +99,11 @@ function Signup() {
       </Form>
       <Message attached="bottom" warning>
         <Icon name="help" />
-        Exiting user?{" "}
+        Exiting user?{' '}
         <Link href="/login">
           <a>Log in here</a>
         </Link>
-        {""}instead.
+        {''}instead.
       </Message>
     </>
   );

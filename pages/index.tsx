@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import axios from "axios";
-import ProductList from "../components/Index/ProductList";
-import ProductPagination from "../components/Index/ProductPagination";
-import baseUrl from "../utils/baseUrl";
-import { NextPageContext } from "next";
-import { homeProps } from "../pagesType/IndexType";
+import React from 'react';
+import axios from 'axios';
+import ProductList from '../components/Index/ProductList';
+import ProductPagination from '../components/Index/ProductPagination';
+import baseUrl from '../utils/baseUrl';
+import { NextPageContext } from 'next';
+import { homeProps } from '../pagesType/IndexType';
 
 function Home({ products, totalPages }: homeProps) {
   return (
@@ -16,7 +16,7 @@ function Home({ products, totalPages }: homeProps) {
 }
 
 Home.getInitialProps = async (ctx: NextPageContext) => {
-  const page = ctx.query.page ? ctx.query.page : "1";
+  const page = ctx.query.page ? ctx.query.page : '1';
   const size = 9;
   const payload = { params: { page, size } };
   //fetch data on server

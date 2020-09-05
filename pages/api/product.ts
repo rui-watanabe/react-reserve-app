@@ -57,7 +57,7 @@ async function handleDeleteRequest(req: NextApiRequest, res: NextApiResponse) {
     // 2) Remove product all carts, referenced as 'product'
     await Cart.updateMany(
       { 'products.product': _id },
-      { '$pull?': { products: { product: _id } } }
+      { '$pull?': { products: { product: _id } } },
     );
   } catch (errors) {
     console.error(errors);

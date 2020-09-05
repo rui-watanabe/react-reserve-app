@@ -36,7 +36,7 @@ async function handleGetRequest(req: NextApiRequest, res: NextApiResponse) {
   try {
     const { userId } = jwt.verify(
       req.headers.authorization,
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET,
     );
     const cart: CartModelType = await Cart.findOne({ user: userId }).populate({
       //find product information from unique product id
@@ -67,7 +67,7 @@ async function handlePutRequest(req: NextApiRequest, res: NextApiResponse) {
   try {
     const { userId } = jwt.verify(
       req.headers.authorization,
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET,
     );
     // Get user cart based on userId
     const cart: CartModelType = await Cart.findOne({ user: userId });
@@ -84,14 +84,14 @@ async function handlePutRequest(req: NextApiRequest, res: NextApiResponse) {
     if (productExists) {
       await Cart.findOneAndUpdate(
         { _id: cart._id, 'products.product': productId },
-        { '$inc?': { 'products.$.quantity': quantity }  }
+        { '$inc?': { 'products.$.quantity': quantity } },
       );
     } else {
       // if not, add new product with given quantity
       const newProduct = { quantity, product: productId };
       await Cart.findOneAndUpdate(
         { _id: cart._id },
-        { $addToSet: { products: newProduct } as {}}
+        { '$addToSet?': { products: newProduct } },
       );
     }
     res.status(200).send('Cart Updated');
@@ -113,12 +113,12 @@ async function handleDeleteRequest(req: NextApiRequest, res: NextApiResponse) {
   try {
     const { userId } = jwt.verify(
       req.headers.authorization,
-      process.env.JWT_SECRET
+      process.env.JWT_SECRET,
     );
     const cart = await Cart.findOneAndUpdate(
       { user: userId },
-      { '$pull?': { products: { product: productId } }},
-      { new: true }
+      { '$pull?': { products: { product: productId } } },
+      { new: true },
     ).populate({
       path: 'products.product',
       model: 'Product',

@@ -70,7 +70,7 @@ Cart.getInitialProps = async (ctx: NextPageContext) => {
   const payload = { headers: { Authorization: token } };
   const response = await axios.get<{ products: ProductModelType[] }>(
     url,
-    payload
+    payload,
   );
   return { products: response.data };
 };

@@ -1,11 +1,11 @@
-import AccountHeader from '../components/Account/AccountHeader'
-import AccountOrders from '../components/Account/AccountOrders'
-import AccountPermissions from '../components/Account/AccountPermissions'
-import { parseCookies } from 'nookies'
-import baseUrl from '../utils/baseUrl'
-import axios from 'axios'
-import { AccountProps } from '../pagesType/AccountType'
-import { NextPageContext } from 'next'
+import AccountHeader from '../components/Account/AccountHeader';
+import AccountOrders from '../components/Account/AccountOrders';
+import AccountPermissions from '../components/Account/AccountPermissions';
+import { parseCookies } from 'nookies';
+import baseUrl from '../utils/baseUrl';
+import axios from 'axios';
+import { AccountProps } from '../pagesType/AccountType';
+import { NextPageContext } from 'next';
 
 function Account({ user, orders }: AccountProps) {
   return (
@@ -13,20 +13,20 @@ function Account({ user, orders }: AccountProps) {
       <AccountHeader {...user} />
       <AccountOrders orders={orders} />
       {/* {user.role === 'root' && <AccountPermissions id={user._id} />} */}
-      {user.role === 'root' && <AccountPermissions/>}
+      {user.role === 'root' && <AccountPermissions />}
     </>
-  )
+  );
 }
 
 Account.getInitialProps = async (ctx: NextPageContext) => {
-  const { token } = parseCookies(ctx)
+  const { token } = parseCookies(ctx);
   if (!token) {
-    return { orders: [] }
+    return { orders: [] };
   }
-  const payload = { headers: { Authorization: token } }
-  const url = `${baseUrl}/api/orders`
-  const response = await axios.get(url, payload)
-  return response.data
-}
+  const payload = { headers: { Authorization: token } };
+  const url = `${baseUrl}/api/orders`;
+  const response = await axios.get(url, payload);
+  return response.data;
+};
 
-export default Account
+export default Account;
