@@ -1,9 +1,10 @@
 import Product from '../../models/ProductModel/Product';
 import connectDB from '../../utils/connectDb';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 connectDB();
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { page, size } = req.query;
   // Convert querystring values to number
   const pageNum = Number(page);
