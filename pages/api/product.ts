@@ -1,11 +1,12 @@
 import Product from '../../models/ProductModel/Product';
 import Cart from '../../models/CartModel/Cart';
 import connectDB from '../../utils/connectDb';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 //to connect absolutely(post request after DB connect)
 connectDB();
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   switch (req.method) {
     case 'GET':
       await handleGetRequest(req, res);
@@ -22,13 +23,13 @@ export default async (req, res) => {
   }
 };
 
-async function handleGetRequest(req, res) {
+async function handleGetRequest(req: NextApiRequest, res: NextApiResponse) {
   const { _id } = req.query;
   const product = await Product.findOne({ _id });
   res.status(200).json(product);
 }
 
-async function handlePostRequest(req, res) {
+async function handlePostRequest(req: NextApiRequest, res: NextApiResponse) {
   //posted by pages/create.js,handleSubmit
   const { name, price, description, mediaUrl } = req.body;
   try {
@@ -48,7 +49,7 @@ async function handlePostRequest(req, res) {
   }
 }
 
-async function handleDeleteRequest(req, res) {
+async function handleDeleteRequest(req: NextApiRequest, res: NextApiResponse) {
   const { _id } = req.query;
   try {
     // 1) Delete product by id
