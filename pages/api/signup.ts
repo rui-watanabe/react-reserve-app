@@ -5,10 +5,11 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import isEmail from 'validator/lib/isEmail';
 import isLength from 'validator/lib/isLength';
+import { NextApiResponse, NextApiRequest } from 'next';
 
 connectDB();
 
-export default async (req, res) => {
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   const { name, email, password } = req.body;
   try {
     // 1) Validate name / email / password
