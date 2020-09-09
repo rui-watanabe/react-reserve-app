@@ -5,7 +5,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 connectDB();
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<void> => {
   switch (req.method) {
     case 'GET':
       await handleGetRequest(req, res);

@@ -6,7 +6,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 //to connect absolutely(post request after DB connect)
 connectDB();
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<void> => {
   switch (req.method) {
     case 'GET':
       await handleGetRequest(req, res);

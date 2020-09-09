@@ -8,7 +8,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 const stripe = new Stripe(String(process.env.STRIPE_SECRET_KEY));
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<void> => {
   const { paymentData } = req.body;
 
   if (!('authorization' in req.headers)) {

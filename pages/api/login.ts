@@ -6,7 +6,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 connectDB();
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<void> => {
   const { email, password } = req.body;
   try {
     // 1) check to see if a user exits with the provided email(+password is previous fields)

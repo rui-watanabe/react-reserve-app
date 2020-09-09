@@ -4,7 +4,10 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 connectDB();
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<void> => {
   const { page, size } = req.query;
   // Convert querystring values to number
   const pageNum = Number(page);

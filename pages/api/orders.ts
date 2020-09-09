@@ -5,7 +5,10 @@ import { NextApiResponse, NextApiRequest } from 'next';
 
 connectDB();
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<void> => {
   try {
     if (!('authorization' in req.headers)) {
       return res.status(401).send('Not defined authorization token');
