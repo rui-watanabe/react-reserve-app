@@ -32,6 +32,8 @@
   },
   "devDependencies": {
     "@types/bcrypt": "^3.0.0",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^26.0.13",
     "@types/js-cookie": "^2.2.6",
     "@types/jsonwebtoken": "^8.5.0",
     "@types/mongodb": "^3.5.27",
@@ -40,17 +42,24 @@
     "@types/nprogress": "^0.2.0",
     "@types/react": "^16.9.46",
     "@types/react-dom": "^16.9.8",
+    "@types/react-test-renderer": "^16.9.3",
     "@types/shortid": "^0.0.29",
     "@types/stripe": "^7.13.24",
     "@types/uuid": "^8.3.0",
     "@types/validator": "^13.1.0",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.4",
+    "enzyme-to-json": "^3.5.0",
     "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
+    "jest": "^26.4.2",
     "prettier": "^2.1.1",
+    "react-test-renderer": "^16.13.1",
+    "ts-jest": "^26.3.0",
     "typescript": "^3.9.7"
   }
 }
