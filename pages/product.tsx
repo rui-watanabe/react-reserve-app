@@ -4,7 +4,7 @@ import ProductAttributes from '../components/Product/ProductAttributes';
 import baseUrl from '../utils/baseUrl';
 import { ProductProps, ProductInitialProps } from '../pagesType/ProductType';
 
-function Product({ product, user }: ProductProps) {
+function Product({ product, user }: ProductProps): JSX.Element {
   return (
     <>
       <ProductSummary user={user} {...product} />

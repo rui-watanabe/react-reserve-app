@@ -6,7 +6,7 @@ import baseUrl from '../utils/baseUrl';
 import { NextPageContext } from 'next';
 import { homeProps } from '../pagesType/IndexType';
 
-function Home({ products, totalPages }: homeProps) {
+function Home({ products, totalPages }: homeProps): JSX.Element {
   return (
     <>
       <ProductList products={products} />
