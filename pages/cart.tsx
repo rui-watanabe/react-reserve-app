@@ -12,7 +12,7 @@ import { NextPageContext } from 'next';
 import { ProductModelType } from '../models/ProductModel/ProductType';
 import { Token } from 'react-stripe-checkout';
 
-function Cart({ products, user }: CartProps) {
+function Cart({ products, user }: CartProps): JSX.Element {
   const [cartProducts, setCartProducts] = React.useState(products);
   const [success, setSuccess] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
