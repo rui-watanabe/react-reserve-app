@@ -14,7 +14,7 @@ export type ProductModelType = ProductModelInterface & ModelResInterface;
 
 export interface ProductInterface extends ModelResInterface {
   quantity: number;
-  product: mongoose.Types.ObjectId | ProductModelType;
+  product: mongoose.Types.ObjectIdConstructor | ProductModelType;
 }
 
 export interface ProductsInterface {
