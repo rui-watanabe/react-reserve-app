@@ -11,7 +11,10 @@ interface userProps {
 }
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }: AppContext) {
+  static async getInitialProps({
+    Component,
+    ctx,
+  }: AppContext): Promise<{ pageProps: userProps }> {
     //各コンポーネント.getInitialPropsで指定したオブジェクトのデータがctxに入る
     const { token } = parseCookies(ctx);
 
@@ -56,18 +59,18 @@ class MyApp extends App {
     return { pageProps };
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     window.addEventListener('storage', this.syncLogout);
   }
 
-  syncLogout = (event: StorageEvent) => {
+  syncLogout = (event: StorageEvent): void => {
     if (event.key === 'logout') {
       console.log('logged out from storage');
       Router.push('/login');
     }
   };
 
-  render() {
+  render(): JSX.Element {
     const { Component, pageProps } = this.props;
     return (
       <Layout {...pageProps}>
