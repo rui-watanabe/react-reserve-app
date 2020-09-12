@@ -9,7 +9,10 @@ import { NextApiResponse, NextApiRequest } from 'next';
 
 connectDB();
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<void> => {
   const { name, email, password } = req.body;
   try {
     // 1) Validate name / email / password

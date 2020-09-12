@@ -15,7 +15,7 @@ import formatDate from '../../utils/formatDate';
 import { AccountOrdersProps } from './AccountType';
 import { OrderModelType } from '../../models/OrderModel/OrderType';
 
-function AccountOrders({ orders }: AccountOrdersProps) {
+function AccountOrders({ orders }: AccountOrdersProps): JSX.Element {
   const router = useRouter();
 
   function mapOrdersToPanels(orders: OrderModelType[]) {
@@ -39,7 +39,7 @@ function AccountOrders({ orders }: AccountOrdersProps) {
             </List.Header>
             <List>
               {order.products.map((p) => {
-                typeof p.product !== 'string' ? (
+                '_id' in p.product ? (
                   <List.Item key={p.product._id}>
                     <Image avatar src={p.product.mediaUrl} />
                     <List.Content>

@@ -4,7 +4,7 @@ import { AxiosError } from 'axios';
 function catchErrors(
   error: AxiosError,
   displayError: Dispatch<SetStateAction<string>>,
-) {
+): void {
   let errorMsg;
   if (error.response) {
     //The request was made and the server responsed with a status code

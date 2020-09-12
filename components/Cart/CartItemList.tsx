@@ -15,7 +15,7 @@ function CartItemList({
   user,
   handleRemoveFromCart,
   success,
-}: CartItemListProps) {
+}: CartItemListProps): JSX.Element {
   const router = useRouter();
 
   function mapCreateProductsToItems(products: CartProductType) {

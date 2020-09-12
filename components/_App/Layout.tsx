@@ -9,7 +9,7 @@ import { HeaderProps } from './HeaderType';
 export function Layout({
   children,
   user,
-}: React.PropsWithChildren<HeaderProps>) {
+}: React.PropsWithChildren<HeaderProps>): JSX.Element {
   return (
     <>
       <Head>

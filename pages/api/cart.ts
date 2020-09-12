@@ -9,7 +9,10 @@ connectDB();
 
 const { ObjectId } = mongoose.Types;
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<void> => {
   switch (req.method) {
     case 'GET':
       await handleGetRequest(req, res);
@@ -73,8 +76,8 @@ async function handlePutRequest(req: NextApiRequest, res: NextApiResponse) {
     const cart: CartModelType = await Cart.findOne({ user: userId });
     // Check if product already exists in cart
     const productExists = cart.products.some((document) => {
-      typeof document.product === 'string'
-        ? ObjectId(productId).equals(document.product)
+      document.product instanceof mongoose.Types.ObjectId
+        ? ObjectId(productId).equals(String(document.product))
         : (isObjectId = false);
     });
     if (!isObjectId) {

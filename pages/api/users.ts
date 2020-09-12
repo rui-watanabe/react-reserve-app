@@ -2,7 +2,10 @@ import User from '../../models/UserModel/User';
 import jwt from 'jsonwebtoken';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+export default async (
+  req: NextApiRequest,
+  res: NextApiResponse,
+): Promise<void> => {
   try {
     if (!('authorization' in req.headers)) {
       return res.status(401).send('Not defined authorization token');

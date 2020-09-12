@@ -12,7 +12,7 @@ const INITIAL_USER = {
   password: '',
 };
 
-function Signup() {
+function Signup(): JSX.Element {
   const [user, setUser] = React.useState(INITIAL_USER);
   const [disabled, setDisabled] = React.useState(true);
   const [loading, setLoading] = React.useState(false);

@@ -4,7 +4,11 @@ import { Button, Segment, Divider, Message } from 'semantic-ui-react';
 import calculateCartTotal from '../../utils/calculateCartTotal';
 import { CartSummaryProps } from './CartType';
 
-function CartSummary({ products, handleCheckout, success }: CartSummaryProps) {
+function CartSummary({
+  products,
+  handleCheckout,
+  success,
+}: CartSummaryProps): JSX.Element {
   const [cartAmount, setCartAmount] = React.useState(0);
   const [stripeAmount, setStripeAmount] = React.useState(0);
   const [isCartEmpty, setCartEmpty] = React.useState(false);

@@ -20,7 +20,7 @@ const INITIAL_PRODUCT = {
   description: '',
 };
 
-function CreateProduct() {
+function CreateProduct(): JSX.Element {
   const [product, setProduct] = React.useState(INITIAL_PRODUCT);
   const [mediaPreview, setMediaPreview] = React.useState('');
   const [success, setSuccess] = React.useState(false);

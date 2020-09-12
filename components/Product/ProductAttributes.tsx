@@ -5,7 +5,11 @@ import baseUrl from '../../utils/baseUrl';
 import { useRouter } from 'next/router';
 import { ProductAttributesProps } from './ProductType';
 
-function ProductAttributes({ description, _id, user }: ProductAttributesProps) {
+function ProductAttributes({
+  description,
+  _id,
+  user,
+}: ProductAttributesProps): JSX.Element {
   const [modal, setModal] = React.useState<boolean>(false);
   const router = useRouter();
   const isRoot = user && user.role === 'root';

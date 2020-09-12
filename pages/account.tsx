@@ -7,7 +7,7 @@ import axios from 'axios';
 import { AccountProps } from '../pagesType/AccountType';
 import { NextPageContext } from 'next';
 
-function Account({ user, orders }: AccountProps) {
+function Account({ user, orders }: AccountProps): JSX.Element {
   return (
     <>
       <AccountHeader {...user} />

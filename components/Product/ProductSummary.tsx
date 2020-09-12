@@ -9,7 +9,7 @@ function ProductSummary({
   price,
   sku,
   user,
-}: ProductSummaryProps) {
+}: ProductSummaryProps): JSX.Element {
   return (
     <Item.Group>
       <Item>
