@@ -6,7 +6,7 @@ interface connectionType {
 
 const connection: connectionType = {};
 
-async function connectDB() {
+async function connectDB(): Promise<void> {
   if (connection.isConnected) {
     // Use exiting database connection
     console.log('Using exiting connection');

@@ -1,4 +1,4 @@
-function formatDate(date: Date) {
+function formatDate(date: Date): string {
   return new Date(date).toLocaleDateString('ja-JP');
 }
 

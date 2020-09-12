@@ -1,6 +1,11 @@
 import { CartProductType } from '../pagesType/CartType';
 
-function calculateCartTotal(products: CartProductType) {
+function calculateCartTotal(
+  products: CartProductType,
+): {
+  cartTotal: number;
+  stripeTotal: number;
+} {
   const total = products.reduce((acc, el) => {
     acc += el.product.price * el.quantity;
     return acc;
