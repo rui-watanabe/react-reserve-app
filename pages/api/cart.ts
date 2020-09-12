@@ -59,8 +59,6 @@ async function handlePutRequest(req: NextApiRequest, res: NextApiResponse) {
     productId,
   }: { quantity: number; productId: string } = req.body;
 
-  let isObjectId = true;
-
   if (!('authorization' in req.headers)) {
     return res.status(401).send('Not defined authorization token');
   } else if (typeof req.headers.authorization !== 'string') {
@@ -76,13 +74,9 @@ async function handlePutRequest(req: NextApiRequest, res: NextApiResponse) {
     const cart: CartModelType = await Cart.findOne({ user: userId });
     // Check if product already exists in cart
     const productExists = cart.products.some((document) => {
-      document.product instanceof mongoose.Types.ObjectId
-        ? ObjectId(productId).equals(String(document.product))
-        : (isObjectId = false);
+      ObjectId(productId).equals(String(document.product));
     });
-    if (!isObjectId) {
-      return res.status(401).send('Not string product`s objectId type');
-    }
+
     // if so, increment quantity (by number provided to request)
     if (productExists) {
       await Cart.findOneAndUpdate(
