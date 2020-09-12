@@ -7,7 +7,10 @@ import cookie from 'js-cookie';
 import catchErrors from '../../utils/catchErrors';
 import { AddProductToCartProps } from './ProductType';
 
-function AddProductToCart({ user, productId }: AddProductToCartProps) {
+function AddProductToCart({
+  user,
+  productId,
+}: AddProductToCartProps): JSX.Element {
   const [quantity, setQuantity] = React.useState(1);
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);

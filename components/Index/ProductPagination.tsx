@@ -2,7 +2,9 @@ import { useRouter } from 'next/router';
 import { Container, Pagination } from 'semantic-ui-react';
 import { ProductPageNationProps } from './IndexType';
 
-function ProductPagination({ totalPages }: ProductPageNationProps) {
+function ProductPagination({
+  totalPages,
+}: ProductPageNationProps): JSX.Element {
   const router = useRouter();
   return (
     <Container textAlign="center" style={{ margin: '2em' }}>

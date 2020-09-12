@@ -11,7 +11,7 @@ import {
 } from './AccountType';
 
 // function AccountPermissions({ id }: AccountPermissionsProps) {
-function AccountPermissions() {
+function AccountPermissions(): JSX.Element {
   const [users, setUsers] = React.useState<SetUsersType>([]);
 
   React.useEffect(() => {

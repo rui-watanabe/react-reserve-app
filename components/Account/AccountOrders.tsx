@@ -15,7 +15,7 @@ import formatDate from '../../utils/formatDate';
 import { AccountOrdersProps } from './AccountType';
 import { OrderModelType } from '../../models/OrderModel/OrderType';
 
-function AccountOrders({ orders }: AccountOrdersProps) {
+function AccountOrders({ orders }: AccountOrdersProps): JSX.Element {
   const router = useRouter();
 
   function mapOrdersToPanels(orders: OrderModelType[]) {

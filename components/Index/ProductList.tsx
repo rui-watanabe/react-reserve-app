@@ -2,7 +2,7 @@ import { Card } from 'semantic-ui-react';
 import { ProductListProps } from './IndexType';
 import { ProductModelType } from '../../models/ProductModel/ProductType';
 
-function ProductList({ products }: ProductListProps) {
+function ProductList({ products }: ProductListProps): JSX.Element {
   function mapProductsToItems(products: ProductModelType[]) {
     return products.map((product) => ({
       header: product.name,

@@ -9,7 +9,7 @@ Router.events.on('onRouteChangeStart', () => NProgress.start());
 Router.events.on('onRouteChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-export function Header({ user }: HeaderProps) {
+export function Header({ user }: HeaderProps): JSX.Element {
   const router = useRouter();
   const isRoot = user && user.role === 'root';
   const isAdmin = user && user.role === 'admin';
