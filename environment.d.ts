@@ -1,4 +1,4 @@
-namespace NodeJS {
+declare namespace NodeJS {
   interface ProcessEnv {
     JWT_SECRET: string;
     CLOUDINARY_URL: string;
