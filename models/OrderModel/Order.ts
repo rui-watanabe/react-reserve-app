@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { OrderModelWithDocType } from './OrderType';
+import { OrderModelWithDocType } from '../Types/OrderType';
 
 const { ObjectId, Number, String } = mongoose.Schema.Types;
 

@@ -8,7 +8,7 @@ function catchErrors(
   let errorMsg;
   if (error.response) {
     //The request was made and the server responsed with a status code
-    //that is not in the range pf 2xx
+    //that is not in the range of 2xx
     errorMsg = error.response.data;
     console.error('Error response', errorMsg);
 

@@ -1,4 +1,4 @@
-import { CartProductType } from '../pagesType/CartType';
+import { CartProductType } from '../src/pagesTypes/CartType';
 
 function calculateCartTotal(
   products: CartProductType,
