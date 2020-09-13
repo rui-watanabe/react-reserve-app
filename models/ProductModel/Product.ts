@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import shortid from 'shortid';
-import { ProductModelWithDocType } from './ProductType';
+import { ProductModelWithDocType } from '../Types/ProductType';
 
 const { String, Number } = mongoose.Schema.Types;
 

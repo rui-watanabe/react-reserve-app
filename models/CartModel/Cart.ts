@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { CartModelWithDocType } from './CartType';
+import { CartModelWithDocType } from '../Types/CartType';
 
 const { ObjectId, Number } = mongoose.Schema.Types;
 

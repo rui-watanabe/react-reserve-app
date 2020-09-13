@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { UserModelWithDocType } from './UserType';
+import { UserModelWithDocType } from '../Types/UserType';
 
 const { String } = mongoose.Schema.Types;
 
