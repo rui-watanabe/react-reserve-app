@@ -57,7 +57,7 @@ function CartSummary({
   ) : (
     <Message negative>
       <Message.Header>We`re sorry we can`t apply that discount</Message.Header>
-      <p>Setting ENV error!</p>
+      <p>ENV type error!</p>
     </Message>
   );
 }
