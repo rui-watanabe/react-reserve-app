@@ -1,3 +1,4 @@
+import React from 'react';
 import { Card } from 'semantic-ui-react';
 import { ProductListProps } from '../Types/IndexType';
 import { ProductModelType } from '../../../models/Types/ProductType';
