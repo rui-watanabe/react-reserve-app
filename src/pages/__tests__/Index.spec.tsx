@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import ProductList from '../../Index/ProductList';
-import { ProductModelType } from '../../../../models/Types/ProductType';
+import Home from '../index';
+import { ProductModelType } from '../../../models/Types/ProductType';
 
 const testProductList: ProductModelType[] = [
   {
@@ -18,8 +18,12 @@ const testProductList: ProductModelType[] = [
   },
 ];
 
-test('ProductList', () => {
-  const component = renderer.create(<ProductList products={testProductList} />);
+const testTotalPages = 1;
+
+test('Home', () => {
+  const component = renderer.create(
+    <Home products={testProductList} totalPages={testTotalPages} />,
+  );
   const tree = component.toJSON();
 
   expect(tree).toMatchSnapshot();
