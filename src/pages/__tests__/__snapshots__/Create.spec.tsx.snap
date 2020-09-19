@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateProduct 1`] = `
+Array [
+  <h2
+    className="ui block header"
+  >
+    <i
+      aria-hidden="true"
+      className="orange add icon"
+      onClick={[Function]}
+    />
+    Create New Product
+  </h2>,
+  <form
+    className="ui form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="ui error message"
+    >
+      <div
+        className="content"
+      >
+        <div
+          className="header"
+        >
+          Oops!
+        </div>
+        <p>
+          
+        </p>
+      </div>
+    </div>
+    <div
+      className="ui icon success message"
+    >
+      <i
+        aria-hidden="true"
+        className="check icon"
+        onClick={[Function]}
+      />
+      <div
+        className="content"
+      >
+        <div
+          className="header"
+        >
+          Success!
+        </div>
+        <p>
+          Your product has been posted
+        </p>
+      </div>
+    </div>
+    <div
+      className="equal width fields"
+    >
+      <div
+        className="field"
+      >
+        <label>
+          Name
+        </label>
+        <div
+          className="ui input"
+        >
+          <input
+            name="name"
+            onChange={[Function]}
+            placeholder="Name"
+            type="text"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="field"
+      >
+        <label>
+          Price
+        </label>
+        <div
+          className="ui input"
+        >
+          <input
+            min="0.00"
+            name="price"
+            onChange={[Function]}
+            placeholder="Price"
+            step="0.01"
+            type="number"
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="field"
+      >
+        <label>
+          Media
+        </label>
+        <div
+          className="ui input"
+          content="Select Image"
+        >
+          <input
+            accept="image/*"
+            name="media"
+            onChange={[Function]}
+            type="file"
+          />
+        </div>
+      </div>
+    </div>
+    <img
+      className="ui small centered rounded image"
+      src=""
+    />
+    <div
+      className="field"
+    >
+      <label>
+        Description
+      </label>
+      <textarea
+        name="description"
+        onChange={[Function]}
+        onInput={[Function]}
+        placeholder="Description"
+        rows={3}
+        value=""
+      />
+    </div>
+    <div
+      className="disabled field"
+    >
+      <button
+        className="ui blue disabled button"
+        disabled={true}
+        onClick={[Function]}
+        tabIndex={-1}
+        type="submit"
+      >
+        <i
+          aria-hidden="true"
+          className="pencil alternate icon"
+          onClick={[Function]}
+        />
+        Submit
+      </button>
+    </div>
+  </form>,
+]
+`;
