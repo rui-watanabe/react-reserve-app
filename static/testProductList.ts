@@ -1,11 +1,9 @@
+import { ObjectID } from 'mongodb';
 import { ProductModelType } from '../models/Types/ProductType';
 
 export const testProductList: ProductModelType[] = [
-  // test product is 0xxxxxxxxx group
   {
-    _id: '0000000000',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Bernie Gledhill',
     price: 1399.02,
     description:
@@ -15,9 +13,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-5.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/f/d/fd1_lngchr_bh_frontlow-field-lounge-chair-tait-blush.jpg',
   },
   {
-    _id: '0000000001',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Gwendolen Bickerstaffe',
     price: 1599.93,
     description:
@@ -27,9 +23,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-3.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/d/s/ds1_lngchr_ca-deep-thoughts-lounge-chair-camel-leather.jpg',
   },
   {
-    _id: '0000000002',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Desi Avramovitz',
     price: 699.57,
     description:
@@ -39,9 +33,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-1.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/r/u/ru1_rton69_m1_overhead-right-on-6-9-rug-color-mix-1.jpg',
   },
   {
-    _id: '0000000003',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Addy Alldre',
     price: 1999.23,
     description:
@@ -51,9 +43,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-3.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/c/l/cl1_secktc_cl_view1-cleon-small-sectional-tait-charcoal.jpg',
   },
   {
-    _id: '0000000004',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Cristian Gilbanks',
     price: 1999.38,
     description:
@@ -63,9 +53,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-4.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/o/n/on1_sleepr_rd_one-night-stand-craig-red.2x.jpg',
   },
   {
-    _id: '0000000005',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Kalila Gooms',
     price: 1299.18,
     description:
@@ -75,9 +63,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-2.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/c/d/cd1-2dcrdz-wl_clad-2-door-credenza.2x.jpg',
   },
   {
-    _id: '0000000006',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Bartolemo Peckitt',
     price: 449.39,
     description:
@@ -87,9 +73,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-4.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/s/r/sr1_sidtbl_sk_front_strut-side-table-smoke_3.jpg',
   },
   {
-    _id: '0000000007',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Kathye Haith',
     price: 199.93,
     description:
@@ -99,9 +83,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-3.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/r/o/rook_modern_table_lamp.jpg',
   },
   {
-    _id: '0000000008',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Armin Basilio',
     price: 2299.01,
     description:
@@ -111,9 +93,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-3.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/n/y/ny1_narmsf_ln_frontlow-9-yard-armless-sofa-sunbrella-linen.jpg',
   },
   {
-    _id: '0000000009',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Cal Sterman',
     price: 299.23,
     description:
@@ -123,9 +103,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-4.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/b/p/bp1_smlpen_ox-bobber-small-pendant-oxblood.jpg',
   },
   {
-    _id: '0000000010',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Ardine Imlaw',
     price: 1299.53,
     description:
@@ -135,9 +113,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-5.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/w/r/wr1_twwood_wl_front-woodrow-twin-walnut_1.jpg',
   },
   {
-    _id: '0000000011',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Noella Ruddom',
     price: 999.21,
     description:
@@ -147,9 +123,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-5.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/m/o/modu-licious_4_-_modern_dresser_storage_4.jpg',
   },
   {
-    _id: '0000000012',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Kirstyn Espadate',
     price: 99.57,
     description:
@@ -159,9 +133,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-5.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/d/k/dk1_lmbrpl_og_front.jpg',
   },
   {
-    _id: '0000000013',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Rourke Greet',
     price: 749.29,
     description:
@@ -171,9 +143,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-5.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/n/s/ns1_lnchbk_dk_new-standard-lounge-chair-nixon-dusk-black.jpg',
   },
   {
-    _id: '0000000014',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Scarlet Rosemallow',
     price: 399.57,
     description:
@@ -183,9 +153,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-4.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/h/o/hotel-modern-rug-navy-black_1.jpg',
   },
   {
-    _id: '0000000015',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Arden Stockbridge',
     price: 349.08,
     description:
@@ -195,9 +163,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-2.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/s/n/sn1_smotto_bl_frontlow-sunday-small-ottoman-agnew-blue.jpg',
   },
   {
-    _id: '0000000016',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Sheffy Gunter',
     price: 499.06,
     description:
@@ -207,9 +173,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-2.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/b/t/bt1_dinchr_in-beween-us-dining-chair-ink-leather.jpg',
   },
   {
-    _id: '0000000017',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Alexine Mulligan',
     price: 299.27,
     description:
@@ -219,9 +183,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-5.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/j/v/jv1_coatrk_tm_frontlow-splash-coat-rack-tomato-white-oak.jpg',
   },
   {
-    _id: '0000000018',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Micheline Charlson',
     price: 119.18,
     description:
@@ -231,9 +193,7 @@ export const testProductList: ProductModelType[] = [
       'https://res-1.cloudinary.com/dwpujv6in/image/upload/c_pad,dpr_2.0,f_auto,h_930,q_auto,w_930/v1/media/catalog/product/d/k/dk1_sqrplw_mg_front.jpg',
   },
   {
-    _id: '0000000019',
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    _id: new ObjectID(),
     name: 'Hughie Jeffryes',
     price: 1199.57,
     description:

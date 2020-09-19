@@ -40,7 +40,7 @@ function AccountOrders({ orders }: AccountOrdersProps): JSX.Element {
             <List>
               {order.products.map((p) => {
                 '_id' in p.product ? (
-                  <List.Item key={p.product._id}>
+                  <List.Item key={String(p.product._id)}>
                     <Image avatar src={p.product.mediaUrl} />
                     <List.Content>
                       <List.Header>{p.product.name}</List.Header>

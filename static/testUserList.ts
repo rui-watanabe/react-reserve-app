@@ -1,9 +1,9 @@
+import { ObjectId, ObjectID } from 'mongodb';
 import { UserModelType } from '../models/Types/UserType';
 
 export const testUserList: UserModelType[] = [
-  // testUser is 1xxxxxxxxx group
   {
-    _id: '20000000001',
+    _id: new ObjectId(),
     createdAt: new Date(),
     updatedAt: new Date(),
     name: 'test',
@@ -12,8 +12,7 @@ export const testUserList: UserModelType[] = [
     role: 'root',
   },
   {
-    // testUser is 1xxxxxxxxx group
-    _id: '20000000002',
+    _id: new ObjectId(),
     createdAt: new Date(),
     updatedAt: new Date(),
     name: 'test2',
@@ -22,8 +21,7 @@ export const testUserList: UserModelType[] = [
     role: 'admin',
   },
   {
-    // testUser is 1xxxxxxxxx group
-    _id: '20000000003',
+    _id: new ObjectId(),
     createdAt: new Date(),
     updatedAt: new Date(),
     name: 'test',

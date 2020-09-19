@@ -55,10 +55,14 @@ function CartSummary({
       </Segment>
     </>
   ) : (
-    <Message negative>
-      <Message.Header>We`re sorry we can`t apply that discount</Message.Header>
-      <p>ENV type error!</p>
-    </Message>
+    <>
+      <Message negative>
+        <Message.Header>
+          We`re sorry we can`t apply that discount
+        </Message.Header>
+        <p>ENV type error!</p>
+      </Message>
+    </>
   );
 }
 

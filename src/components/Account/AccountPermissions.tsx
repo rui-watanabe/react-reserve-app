@@ -48,7 +48,7 @@ function AccountPermissions(): JSX.Element {
           {() => {
             if (users.length !== 0) {
               users.map((user) => (
-                <UserPermission key={user._id} user={user} />
+                <UserPermission key={String(user._id)} user={user} />
               ));
             }
           }}
