@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountPermissions 1`] = `
+<div
+  style={
+    Object {
+      "margin": "2em 0",
+    }
+  }
+>
+  <h2
+    className="ui header"
+  >
+    <i
+      aria-hidden="true"
+      className="settings icon"
+      onClick={[Function]}
+    />
+    User Permissions
+  </h2>
+  <table
+    className="ui celled definition compact table"
+  >
+    <thead
+      className=""
+    >
+      <tr
+        className=""
+      >
+        <th
+          className=""
+        />
+        <th
+          className=""
+        >
+          Name
+        </th>
+        <th
+          className=""
+        >
+          Email
+        </th>
+        <th
+          className=""
+        >
+          Joined
+        </th>
+        <th
+          className=""
+        >
+          Updated
+        </th>
+        <th
+          className=""
+        >
+          Role
+        </th>
+      </tr>
+    </thead>
+    <tbody
+      className=""
+    />
+  </table>
+</div>
+`;
