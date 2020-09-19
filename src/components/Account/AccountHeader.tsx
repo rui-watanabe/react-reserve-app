@@ -1,3 +1,4 @@
+import React from 'react';
 import { Header, Icon, Segment, Label } from 'semantic-ui-react';
 import formatDate from '../../../utils/formatDate';
 import { UserModelType } from '../../../models/Types/UserType';

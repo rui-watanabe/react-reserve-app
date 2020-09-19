@@ -1,3 +1,4 @@
+import React from 'react';
 export const HeadContent = (): JSX.Element => (
   <>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
