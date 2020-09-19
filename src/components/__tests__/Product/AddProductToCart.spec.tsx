@@ -1,15 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { testUser } from '../../../../static/testData';
 import { testProductList } from '../../../../static/testProductList';
-import { testUserList } from '../../../../static/testUserList';
 import AddProductToCart from '../../Product/AddProductToCart';
 
 test('AddProductToCart', () => {
   const component = renderer.create(
-    <AddProductToCart
-      user={testUserList[2]}
-      productId={testProductList[0]._id}
-    />,
+    <AddProductToCart user={testUser} productId={testProductList[0]._id} />,
   );
   const tree = component.toJSON();
 
