@@ -1,7 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Home from '../index';
-import { testProductList, testTotalPages } from '../../../static/testData';
+import { testTotalPages } from '../../../static/testData';
+import { testProductList } from '../../../static/testProductList';
 
 test('Home', () => {
   const component = renderer.create(
