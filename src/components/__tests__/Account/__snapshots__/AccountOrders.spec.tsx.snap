@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountOrders 1`] = `
+Array [
+  <h2
+    className="ui header"
+  >
+    <i
+      aria-hidden="true"
+      className="folder open icon"
+      onClick={[Function]}
+    />
+    Order History
+  </h2>,
+  <div
+    className="accordion ui fluid styled"
+  >
+    <div
+      className="title"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="dropdown icon"
+        onClick={[Function]}
+      />
+      <div
+        className="ui blue label"
+        onClick={[Function]}
+      >
+        2020-9-19
+      </div>
+    </div>
+    <div
+      className="content"
+    >
+      <h3
+        className="header"
+      >
+        Total: $
+        4598.88
+        <div
+          className="ui basic horizontal label"
+          onClick={[Function]}
+          style={
+            Object {
+              "marginLeft": "1em",
+            }
+          }
+        >
+          <i
+            aria-hidden="true"
+            className="mail icon"
+            onClick={[Function]}
+          />
+          test@gmail.com
+        </div>
+      </h3>
+      <div
+        className="ui list"
+        role="list"
+      />
+    </div>
+    <div
+      className="title"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="dropdown icon"
+        onClick={[Function]}
+      />
+      <div
+        className="ui blue label"
+        onClick={[Function]}
+      >
+        2020-9-19
+      </div>
+    </div>
+    <div
+      className="content"
+    >
+      <h3
+        className="header"
+      >
+        Total: $
+        4698.03
+        <div
+          className="ui basic horizontal label"
+          onClick={[Function]}
+          style={
+            Object {
+              "marginLeft": "1em",
+            }
+          }
+        >
+          <i
+            aria-hidden="true"
+            className="mail icon"
+            onClick={[Function]}
+          />
+          test@gmail.com
+        </div>
+      </h3>
+      <div
+        className="ui list"
+        role="list"
+      />
+    </div>
+    <div
+      className="title"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="dropdown icon"
+        onClick={[Function]}
+      />
+      <div
+        className="ui blue label"
+        onClick={[Function]}
+      >
+        2020-9-19
+      </div>
+    </div>
+    <div
+      className="content"
+    >
+      <h3
+        className="header"
+      >
+        Total: $
+        4597.74
+        <div
+          className="ui basic horizontal label"
+          onClick={[Function]}
+          style={
+            Object {
+              "marginLeft": "1em",
+            }
+          }
+        >
+          <i
+            aria-hidden="true"
+            className="mail icon"
+            onClick={[Function]}
+          />
+          test@gmail.com
+        </div>
+      </h3>
+      <div
+        className="ui list"
+        role="list"
+      />
+    </div>
+  </div>,
+]
+`;
