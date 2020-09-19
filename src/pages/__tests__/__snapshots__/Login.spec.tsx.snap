@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login 1`] = `
+Array [
+  <div
+    className="ui blue icon attached message"
+  >
+    <i
+      aria-hidden="true"
+      className="privacy icon"
+      onClick={[Function]}
+    />
+    <div
+      className="content"
+    >
+      <div
+        className="header"
+      >
+        Welcome Back!
+      </div>
+      <p>
+        Log in with email and password
+      </p>
+    </div>
+  </div>,
+  <form
+    className="ui form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="ui error message"
+    >
+      <div
+        className="content"
+      >
+        <div
+          className="header"
+        >
+          Oops!
+        </div>
+        <p>
+          
+        </p>
+      </div>
+    </div>
+    <div
+      className="ui segment"
+    >
+      <div
+        className="field"
+      >
+        <label>
+          Email
+        </label>
+        <div
+          className="ui fluid left icon input"
+        >
+          <input
+            name="email"
+            onChange={[Function]}
+            placeholder="Email"
+            type="email"
+            value=""
+          />
+          <i
+            aria-hidden="true"
+            className="envelope icon"
+            onClick={[Function]}
+          />
+        </div>
+      </div>
+      <div
+        className="field"
+      >
+        <label>
+          Password
+        </label>
+        <div
+          className="ui fluid left icon input"
+        >
+          <input
+            name="password"
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+            value=""
+          />
+          <i
+            aria-hidden="true"
+            className="lock icon"
+            onClick={[Function]}
+          />
+        </div>
+      </div>
+      <button
+        className="ui orange disabled button"
+        disabled={true}
+        onClick={[Function]}
+        tabIndex={-1}
+        type="submit"
+      >
+        <i
+          aria-hidden="true"
+          className="sign in icon"
+          onClick={[Function]}
+        />
+        Login
+      </button>
+    </div>
+  </form>,
+  <div
+    className="ui warning bottom attached message"
+  >
+    <i
+      aria-hidden="true"
+      className="help icon"
+      onClick={[Function]}
+    />
+    New user?
+    
+    <a
+      href="/signup"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Sign up here
+    </a>
+    
+    instead.
+  </div>,
+]
+`;
