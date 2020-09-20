@@ -30,7 +30,7 @@ function Header({ user }: HeaderProps): JSX.Element {
               src="/static/logo.svg"
               style={{ marginRight: '1em' }}
             />
-            ReactReserve
+            MERN Reserve
           </Menu.Item>
         </Link>
 

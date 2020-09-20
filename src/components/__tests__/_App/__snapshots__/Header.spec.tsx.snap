@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header 1`] = `
+<div
+  className="ui fluid inverted stackable menu"
+  id="menu"
+>
+  <div
+    className="ui text container"
+  >
+    <a
+      className="header item"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <img
+        className="ui mini image"
+        src="/static/logo.svg"
+        style={
+          Object {
+            "marginRight": "1em",
+          }
+        }
+      />
+      MERN Reserve
+    </a>
+    <a
+      className="header item"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="cart large icon"
+        onClick={[Function]}
+      />
+      Cart
+    </a>
+    <a
+      className="header item"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="user large icon"
+        onClick={[Function]}
+      />
+      Account
+    </a>
+    <a
+      className="header item"
+      onClick={[Function]}
+    >
+      <i
+        aria-hidden="true"
+        className="sign out large icon"
+        onClick={[Function]}
+      />
+      Logout
+    </a>
+  </div>
+</div>
+`;
