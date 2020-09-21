@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { ModelResInterface } from './CommonModelType';
+import { ModelIdInterface } from './CommonModelType';
 import { ProductsInterface } from './ProductType';
 
 export interface CartModelInterface extends ProductsInterface {
@@ -7,4 +7,4 @@ export interface CartModelInterface extends ProductsInterface {
 }
 
 export type CartModelWithDocType = CartModelInterface & mongoose.Document;
-export type CartModelType = CartModelInterface & ModelResInterface;
+export type CartModelType = CartModelInterface & ModelIdInterface;

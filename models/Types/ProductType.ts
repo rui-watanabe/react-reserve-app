@@ -1,5 +1,6 @@
+import { ObjectId } from 'mongodb';
 import mongoose from 'mongoose';
-import { ModelResInterface } from './CommonModelType';
+import { ModelIdInterface } from './CommonModelType';
 
 export interface ProductModelInterface {
   name: string;
@@ -10,11 +11,11 @@ export interface ProductModelInterface {
 }
 
 export type ProductModelWithDocType = ProductModelInterface & mongoose.Document;
-export type ProductModelType = ProductModelInterface & ModelResInterface;
+export type ProductModelType = ProductModelInterface & ModelIdInterface;
 
-export interface ProductInterface extends ModelResInterface {
+export interface ProductInterface extends ModelIdInterface {
   quantity: number;
-  product: mongoose.Types.ObjectIdConstructor | ProductModelType;
+  product: ObjectId | ProductModelType;
 }
 
 export interface ProductsInterface {

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Item, Label } from 'semantic-ui-react';
 import AddProductToCart from './AddProductToCart';
 import { ProductSummaryProps } from '../Types/ProductType';

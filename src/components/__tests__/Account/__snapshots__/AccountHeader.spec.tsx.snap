@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountHeader 1`] = `
+<div
+  className="ui violet inverted secondary segment"
+>
+  <div
+    className="ui teal large ribbon label"
+    onClick={[Function]}
+    style={
+      Object {
+        "textTransform": "capitalize",
+      }
+    }
+  >
+    <i
+      aria-hidden="true"
+      className="privacy icon"
+      onClick={[Function]}
+    />
+    user
+  </div>
+  <h1
+    className="ui icon inverted center aligned header"
+  >
+    <i
+      aria-hidden="true"
+      className="user icon"
+      onClick={[Function]}
+    />
+    test
+    <div
+      className="sub header"
+    >
+      test@gmail.com
+    </div>
+    <div
+      className="sub header"
+    >
+      Joined 
+      2020-9-21
+    </div>
+  </h1>
+</div>
+`;

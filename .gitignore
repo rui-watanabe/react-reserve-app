@@ -8,3 +8,5 @@ now.json
 
 .history
 .vercel
+
+coverage/

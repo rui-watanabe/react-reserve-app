@@ -1,3 +1,4 @@
+import { ObjectId } from 'mongodb';
 import { ProductModelType } from '../models/Types/ProductType';
 import { UserModelType } from '../models/Types/UserType';
 
@@ -8,6 +9,6 @@ export interface ProductProps {
 
 export interface ProductInitialProps {
   query: {
-    _id: string;
+    _id: ObjectId;
   };
 }

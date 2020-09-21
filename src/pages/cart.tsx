@@ -11,13 +11,14 @@ import { CartProps } from '../pagesTypes/CartType';
 import { NextPageContext } from 'next';
 import { ProductModelType } from '../../models/Types/ProductType';
 import { Token } from 'react-stripe-checkout';
+import { ObjectId } from 'mongodb';
 
 function Cart({ products, user }: CartProps): JSX.Element {
   const [cartProducts, setCartProducts] = React.useState(products);
   const [success, setSuccess] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
 
-  async function handleRemoveFromCart(productId: string) {
+  async function handleRemoveFromCart(productId: ObjectId) {
     const url = `${baseUrl}/api/cart`;
     const token = cookie.get('token');
     const payload = {

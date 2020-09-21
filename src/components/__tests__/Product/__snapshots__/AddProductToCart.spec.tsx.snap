@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddProductToCart 1`] = `
+<div
+  className="ui action input"
+>
+  <input
+    min="1"
+    onChange={[Function]}
+    placeholder="Quantity"
+    type="number"
+    value={1}
+  />
+  <button
+    className="ui orange button"
+    onClick={[Function]}
+  >
+    <i
+      aria-hidden="true"
+      className="plus cart icon"
+      onClick={[Function]}
+    />
+    Add to Cart
+  </button>
+</div>
+`;

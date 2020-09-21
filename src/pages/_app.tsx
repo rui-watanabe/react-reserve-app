@@ -1,5 +1,5 @@
 import App, { AppContext } from 'next/app';
-import { Layout } from '../components/_App/Layout';
+import Layout from '../components/_App/Layout';
 import { parseCookies, destroyCookie } from 'nookies';
 import { redirectUser } from '../../utils/auth';
 import baseUrl from '../../utils/baseUrl';

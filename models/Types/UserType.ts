@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { ModelResInterface } from './CommonModelType';
+import { ModelTimeInterface } from './CommonModelType';
 
 export interface UserModelInterface {
   name: string;
@@ -9,4 +9,4 @@ export interface UserModelInterface {
 }
 
 export type UserModelWithDocType = UserModelInterface & mongoose.Document;
-export type UserModelType = UserModelInterface & ModelResInterface;
+export type UserModelType = UserModelInterface & ModelTimeInterface;

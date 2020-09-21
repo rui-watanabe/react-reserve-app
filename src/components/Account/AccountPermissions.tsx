@@ -44,14 +44,12 @@ function AccountPermissions(): JSX.Element {
           </Table.Row>
         </Table.Header>
 
-        <Table.Body>
-          {() => {
-            if (users.length !== 0) {
-              users.map((user) => (
-                <UserPermission key={user._id} user={user} />
-              ));
-            }
-          }}
+        <Table.Body data-testid="user-permission">
+          {users.length != 0
+            ? users.map((user) => (
+                <UserPermission key={String(user._id)} user={user} />
+              ))
+            : null}
         </Table.Body>
       </Table>
     </div>

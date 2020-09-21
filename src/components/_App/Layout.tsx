@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
 import { Container } from 'semantic-ui-react';
-import { Header } from './Header';
-import { HeadContent } from './HeadContent';
+import Header from './Header';
+import HeadContent from './HeadContent';
 import { HeaderProps } from '../Types/_AppType';
 
-export function Layout({
+function Layout({
   children,
   user,
 }: React.PropsWithChildren<HeaderProps>): JSX.Element {
@@ -29,3 +29,5 @@ export function Layout({
     </>
   );
 }
+
+export default Layout;

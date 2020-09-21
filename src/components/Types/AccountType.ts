@@ -6,7 +6,7 @@ export interface AccountOrdersProps {
 }
 
 // export interface AccountPermissionsProps {
-//   id: string;
+//   id: ObjectId;
 // }
 
 export type SetUsersType = UserModelType[];

@@ -1,5 +1,6 @@
-import { UserModelType } from '../../models/Types/UserType';
+import { ObjectId } from 'mongodb';
 import { OrderModelType } from '../../models/Types/OrderType';
+import { UserModelType } from '../../models/Types/UserType';
 
 export interface AccountProps {
   user: UserModelType;
@@ -7,7 +8,7 @@ export interface AccountProps {
 }
 
 export interface userIdInterface {
-  userId: string;
+  userId: ObjectId;
 }
 
 declare module 'jsonwebtoken' {
@@ -15,5 +16,5 @@ declare module 'jsonwebtoken' {
     token: string,
     secretOrPublicKey: string | Buffer,
     options?: VerifyOptions,
-  ): { userId: string };
+  ): { userId: ObjectId };
 }

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useRouter } from 'next/router';
 import { Container, Pagination } from 'semantic-ui-react';
 import { ProductPageNationProps } from '../Types/IndexType';

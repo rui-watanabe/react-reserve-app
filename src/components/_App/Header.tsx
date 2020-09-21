@@ -1,3 +1,4 @@
+import React from 'react';
 import { Menu, Container, Image, Icon } from 'semantic-ui-react';
 import Link from 'next/link';
 import Router, { useRouter } from 'next/router';
@@ -9,7 +10,7 @@ Router.events.on('onRouteChangeStart', () => NProgress.start());
 Router.events.on('onRouteChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-export function Header({ user }: HeaderProps): JSX.Element {
+function Header({ user }: HeaderProps): JSX.Element {
   const router = useRouter();
   const isRoot = user && user.role === 'root';
   const isAdmin = user && user.role === 'admin';
@@ -29,7 +30,7 @@ export function Header({ user }: HeaderProps): JSX.Element {
               src="/static/logo.svg"
               style={{ marginRight: '1em' }}
             />
-            ReactReserve
+            MERN Reserve
           </Menu.Item>
         </Link>
 
@@ -84,3 +85,5 @@ export function Header({ user }: HeaderProps): JSX.Element {
     </Menu>
   );
 }
+
+export default Header;
