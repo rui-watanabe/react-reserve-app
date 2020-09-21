@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import Layout from '../../../components/_App/Layout';
 import { testUser } from '../../../../static/testData';
-import Header from '../../_App/Header';
 
 jest.mock('next/router', () => ({
   events: {
@@ -23,9 +23,8 @@ jest.mock('next/router', () => ({
     };
   },
 }));
-
-test('Header', () => {
-  const component = renderer.create(<Header user={testUser} />);
+test('Layout', () => {
+  const component = renderer.create(<Layout user={testUser} />);
   const tree = component.toJSON();
 
   expect(tree).toMatchSnapshot();

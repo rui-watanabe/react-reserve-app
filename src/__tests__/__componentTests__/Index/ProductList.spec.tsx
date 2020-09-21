@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { testProductList } from '../../../../static/testProductList';
-import ProductList from '../../Index/ProductList';
+import ProductList from '../../../components/Index/ProductList';
 
 test('ProductList', () => {
   const component = renderer.create(<ProductList products={testProductList} />);

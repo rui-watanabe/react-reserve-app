@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { testUserList } from '../../../../static/testUserList';
-import AccountPermissions from '../../Account/AccountPermissions';
+import AccountPermissions from '../../../components/Account/AccountPermissions';
 
 const realUseState = React.useState;
 
