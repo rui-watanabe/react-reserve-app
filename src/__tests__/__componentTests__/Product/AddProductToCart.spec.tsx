@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { testUser } from '../../../../static/testData';
 import { testProductList } from '../../../../static/testProductList';
-import AddProductToCart from '../../Product/AddProductToCart';
+import AddProductToCart from '../../../components/Product/AddProductToCart';
 
 test('AddProductToCart', () => {
   const component = renderer.create(

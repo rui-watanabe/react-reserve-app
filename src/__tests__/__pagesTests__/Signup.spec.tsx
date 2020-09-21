@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import HeadContent from '../../_App/HeadContent';
+import Signup from '../../pages/signup';
 
-test('HeadContent', () => {
-  const component = renderer.create(<HeadContent />);
+test('Signup', () => {
+  const component = renderer.create(<Signup />);
   const tree = component.toJSON();
 
   expect(tree).toMatchSnapshot();

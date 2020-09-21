@@ -1,11 +1,12 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { testUser } from '../../../../static/testData';
 import { testProductList } from '../../../../static/testProductList';
-import ProductPagination from '../../Index/ProductPagination';
+import ProductSummary from '../../../components/Product/ProductSummary';
 
-test('ProductPagination', () => {
+test('ProductSummary', () => {
   const component = renderer.create(
-    <ProductPagination totalPages={Math.floor(testProductList.length / 9)} />,
+    <ProductSummary user={testUser} {...testProductList[0]} />,
   );
   const tree = component.toJSON();
 

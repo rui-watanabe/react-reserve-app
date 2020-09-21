@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import { testUser } from '../../../../static/testData';
-import AccountHeader from '../../Account/AccountHeader';
+import AccountHeader from '../../../components/Account/AccountHeader';
 
 test('AccountHeader', () => {
   const component = renderer.create(<AccountHeader {...testUser} />);
