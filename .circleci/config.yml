@@ -30,6 +30,9 @@ workflows:
           requires:
             - package-install-and-lint
       - deploy-now:
+          filters:
+            branches:
+              only: deploy
           requires:
             - build
             - test
@@ -67,4 +70,3 @@ jobs:
       - *save_node_modules
       - run: sudo yarn global add now
       - run: now deploy --token $NOW_TOKEN
-
