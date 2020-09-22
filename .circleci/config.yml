@@ -59,7 +59,7 @@ jobs:
       - checkout
       - *restore_node_modules
       - *save_node_modules
-      - run: yarn test -u
+      - run: yarn test
       - store_artifacts:
           path: coverage
   deploy-now:
