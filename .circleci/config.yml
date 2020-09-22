@@ -26,16 +26,16 @@ workflows:
       - build:
           requires:
             - package-install-and-lint
-      # - test:
-      #     requires:
-      #       - package-install-and-lint
+      - test:
+          requires:
+            - package-install-and-lint
       - deploy-now:
           filters:
             branches:
-              only: deploy
+              only: master
           requires:
             - build
-            # - test
+            - test
 
 jobs:
   package-install-and-lint:
@@ -53,15 +53,15 @@ jobs:
       - *restore_node_modules
       - *save_node_modules
       - run: yarn build
-  # test:
-  #   executor: frontend-executor
-  #   steps:
-  #     - checkout
-  #     - *restore_node_modules
-  #     - *save_node_modules
-  #     - run: yarn test
-  #     - store_artifacts:
-  #         path: coverage
+  test:
+    executor: frontend-executor
+    steps:
+      - checkout
+      - *restore_node_modules
+      - *save_node_modules
+      - run: yarn test
+      - store_artifacts:
+          path: coverage
   deploy-now:
     executor: frontend-executor
     steps:
