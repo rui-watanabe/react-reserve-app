@@ -4,8 +4,8 @@ import { UserModelType } from '../models/Types/UserType';
 export const testUserList: UserModelType[] = [
   {
     _id: new ObjectId('000000000000000000000001'),
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    createdAt: new Date('2020-9-21'),
+    updatedAt: new Date('2020-9-21'),
     name: 'test',
     email: 'test@gmail.com',
     password: '11111111',
@@ -13,8 +13,8 @@ export const testUserList: UserModelType[] = [
   },
   {
     _id: new ObjectId('000000000000000000000002'),
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    createdAt: new Date('2020-9-21'),
+    updatedAt: new Date('2020-9-21'),
     name: 'test2',
     email: 'test2@gmail.com',
     password: '22222222',
@@ -22,8 +22,8 @@ export const testUserList: UserModelType[] = [
   },
   {
     _id: new ObjectId('000000000000000000000003'),
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    createdAt: new Date('2020-9-21'),
+    updatedAt: new Date('2020-9-21'),
     name: 'test',
     email: 'test@gmail.com',
     password: '33333333',
