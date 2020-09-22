@@ -53,10 +53,6 @@ jobs:
       - *restore_node_modules
       - *save_node_modules
       - run: yarn build
-      - persist_to_workspace:
-        root: .
-        paths:
-          - .
   test:
     executor: frontend-executor
     steps:
@@ -72,7 +68,5 @@ jobs:
       - checkout
       - *restore_node_modules
       - *save_node_modules
-      - attach_workspace:
-        at: .
       - run: sudo yarn global add now
-      - run: now deploy --token $NOW_TOKEN
+      - run: now deploy --token $NOW_TOKEN .
