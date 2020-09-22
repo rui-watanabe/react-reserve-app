@@ -69,4 +69,4 @@ jobs:
       - *restore_node_modules
       - *save_node_modules
       - run: sudo yarn global add now
-      - run: now --target production --token $NOW_TOKEN
+      - run: now -t $NOW_TOKEN -c --prod
