@@ -6,8 +6,8 @@ import { testUserList } from './testUserList';
 export const testOrdersList: OrderModelType[] = [
   {
     _id: new ObjectId('200000000000000000000001'),
-    createdAt: new Date('2020-9-22'),
-    updatedAt: new Date('2020-9-22'),
+    createdAt: new Date(2020, 4, 1, 12, 30, 45),
+    updatedAt: new Date(2020, 4, 1, 12, 30, 45),
     products: [
       {
         _id: new ObjectID('100000000000000000000001'),
@@ -26,8 +26,8 @@ export const testOrdersList: OrderModelType[] = [
   },
   {
     _id: new ObjectID('200000000000000000000002'),
-    createdAt: new Date('2020-9-22'),
-    updatedAt: new Date('2020-9-22'),
+    createdAt: new Date(2020, 4, 1, 12, 30, 45),
+    updatedAt: new Date(2020, 4, 1, 12, 30, 45),
     products: [
       {
         _id: new ObjectID('100000000000000000000003'),
@@ -46,8 +46,8 @@ export const testOrdersList: OrderModelType[] = [
   },
   {
     _id: new ObjectID('200000000000000000000003'),
-    createdAt: new Date('2020-9-22'),
-    updatedAt: new Date('2020-9-22'),
+    createdAt: new Date(2020, 4, 1, 12, 30, 45),
+    updatedAt: new Date(2020, 4, 1, 12, 30, 45),
     products: [
       {
         _id: new ObjectID('100000000000000000000005'),
