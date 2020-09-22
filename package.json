@@ -61,10 +61,17 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
+    "husky": "^4.3.0",
     "jest": "^26.4.2",
     "prettier": "^2.1.1",
     "react-test-renderer": "^16.13.1",
     "ts-jest": "^26.3.0",
     "typescript": "^3.9.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "pre-push": "npm run lint"
+    }
   }
 }
