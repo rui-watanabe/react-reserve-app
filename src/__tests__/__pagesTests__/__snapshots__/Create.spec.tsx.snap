@@ -70,7 +70,7 @@ Array [
             onChange={[Function]}
             placeholder="Name"
             type="text"
-            value=""
+            value="Bernie Gledhill"
           />
         </div>
       </div>
@@ -90,7 +90,7 @@ Array [
             placeholder="Price"
             step="0.01"
             type="number"
-            value=""
+            value={1399.02}
           />
         </div>
       </div>
@@ -129,7 +129,7 @@ Array [
         onInput={[Function]}
         placeholder="Description"
         rows={3}
-        value=""
+        value="Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus."
       />
     </div>
     <div
