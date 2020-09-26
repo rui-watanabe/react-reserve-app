@@ -11,12 +11,6 @@ jest
     () => realUseState(testUserList) as [unknown, React.Dispatch<unknown>],
   );
 
-jest.mock('axios', () => ({
-  get() {
-    return;
-  },
-}));
-
 test('AccountPermissions', () => {
   const component = renderer.create(<AccountPermissions />);
   const tree = component.toJSON();
