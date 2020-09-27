@@ -35,13 +35,11 @@ function CreateProduct(): JSX.Element {
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value, files } = event.target;
-    if (name && value && files) {
-      if (name === 'media') {
-        setProduct((prevState) => ({ ...prevState, media: String(files[0]) }));
-        setMediaPreview(window.URL.createObjectURL(files[0]));
-      } else {
-        setProduct((prevState) => ({ ...prevState, [name]: value }));
-      }
+    if (name === 'media' && files) {
+      setProduct((prevState) => ({ ...prevState, media: String(files[0]) }));
+      setMediaPreview(window.URL.createObjectURL(files[0]));
+    } else if (name || value) {
+      setProduct((prevState) => ({ ...prevState, [name]: value }));
     }
   }
 
