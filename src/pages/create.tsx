@@ -12,11 +12,12 @@ import {
 import axios from 'axios';
 import baseUrl from '../../utils/baseUrl';
 import catchErrors from '../../utils/catchErrors';
+import { InitialProductInterface } from '../pagesTypes/CreateType';
 
-const INITIAL_PRODUCT = {
+const INITIAL_PRODUCT: InitialProductInterface = {
   name: '',
   price: '',
-  media: '',
+  media: {} as File,
   description: '',
 };
 
@@ -36,7 +37,7 @@ function CreateProduct(): JSX.Element {
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value, files } = event.target;
     if (name === 'media' && files) {
-      setProduct((prevState) => ({ ...prevState, media: String(files[0]) }));
+      setProduct((prevState) => ({ ...prevState, media: files[0] }));
       setMediaPreview(window.URL.createObjectURL(files[0]));
     } else if (name || value) {
       setProduct((prevState) => ({ ...prevState, [name]: value }));
