@@ -10,6 +10,7 @@ import {
   Icon,
 } from 'semantic-ui-react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 import baseUrl from '../../utils/baseUrl';
 import catchErrors from '../../utils/catchErrors';
 import { InitialProductInterface } from '../pagesTypes/CreateType';
@@ -22,6 +23,7 @@ const INITIAL_PRODUCT: InitialProductInterface = {
 };
 
 function CreateProduct(): JSX.Element {
+  const router = useRouter();
   const [product, setProduct] = React.useState(INITIAL_PRODUCT);
   const [mediaPreview, setMediaPreview] = React.useState('');
   const [success, setSuccess] = React.useState(false);
@@ -32,6 +34,9 @@ function CreateProduct(): JSX.Element {
   React.useEffect(() => {
     const isProduct = Object.values(product).every((el) => Boolean(el));
     isProduct ? setDisabled(false) : setDisabled(true);
+    if (success) {
+      setTimeout(() => router.push('/'), 3000);
+    }
   }, [product]);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
