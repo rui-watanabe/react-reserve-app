@@ -4,7 +4,7 @@ import { testProduct } from '../../../static/testData';
 import CreateProduct from '../../pages/create';
 
 const realUseState = React.useState;
-const handleChangeSpy = jest.fn();
+// const handleChangeSpy = jest.fn();
 
 jest
   .spyOn(React, 'useState')
