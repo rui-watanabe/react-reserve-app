@@ -1,6 +1,16 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { testProduct } from '../../../static/testData';
 import CreateProduct from '../../pages/create';
+
+const realUseState = React.useState;
+// const handleChangeSpy = jest.fn();
+
+jest
+  .spyOn(React, 'useState')
+  .mockImplementationOnce(
+    () => realUseState(testProduct) as [unknown, React.Dispatch<unknown>],
+  );
 
 test('CreateProduct', () => {
   const component = renderer.create(<CreateProduct />);

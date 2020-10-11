@@ -9,8 +9,9 @@ function ProductPagination({
   const router = useRouter();
   return (
     <Container textAlign="center" style={{ margin: '2em' }}>
+      {console.log(router)}
       <Pagination
-        defaultActivePage={1}
+        defaultActivePage={router.query.page ? Number(router.query.page) : 1}
         totalPages={totalPages}
         onPageChange={(event, data) => {
           data.activePage === 1
