@@ -154,7 +154,7 @@ Array [
 ]
 `;
 
-exports[`Signup 2`] = `
+exports[`Signuped 1`] = `
 Array [
   <div
     className="ui teal icon attached message"
