@@ -17,7 +17,7 @@ jest
   .mockImplementationOnce(
     () => realUseState(testUser) as [unknown, React.Dispatch<unknown>],
   );
-test('Signup', () => {
+test('Signuped', () => {
   const component = renderer.create(<Signup />);
   const tree = component.toJSON();
 
