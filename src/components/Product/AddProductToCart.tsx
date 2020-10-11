@@ -17,13 +17,13 @@ function AddProductToCart({
   const router = useRouter();
 
   React.useEffect(() => {
-    let timeout: NodeJS.Timeout;
+    let timeout: number;
     if (success) {
-      timeout = setTimeout(() => setSuccess(false), 3000);
+      timeout = window.setTimeout(() => setSuccess(false), 3000);
     }
     //also unmount
     return () => {
-      clearTimeout(timeout);
+      window.clearTimeout(timeout);
     };
   }, [success]);
 
