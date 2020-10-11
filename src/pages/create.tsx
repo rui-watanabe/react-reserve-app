@@ -10,17 +10,20 @@ import {
   Icon,
 } from 'semantic-ui-react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 import baseUrl from '../../utils/baseUrl';
 import catchErrors from '../../utils/catchErrors';
+import { InitialProductInterface } from '../pagesTypes/CreateType';
 
-const INITIAL_PRODUCT = {
+const INITIAL_PRODUCT: InitialProductInterface = {
   name: '',
   price: '',
-  media: '',
+  media: {} as File,
   description: '',
 };
 
 function CreateProduct(): JSX.Element {
+  const router = useRouter();
   const [product, setProduct] = React.useState(INITIAL_PRODUCT);
   const [mediaPreview, setMediaPreview] = React.useState('');
   const [success, setSuccess] = React.useState(false);
@@ -31,17 +34,18 @@ function CreateProduct(): JSX.Element {
   React.useEffect(() => {
     const isProduct = Object.values(product).every((el) => Boolean(el));
     isProduct ? setDisabled(false) : setDisabled(true);
+    if (success) {
+      setTimeout(() => router.push('/'), 3000);
+    }
   }, [product]);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, value, files } = event.target;
-    if (name && value && files) {
-      if (name === 'media') {
-        setProduct((prevState) => ({ ...prevState, media: String(files[0]) }));
-        setMediaPreview(window.URL.createObjectURL(files[0]));
-      } else {
-        setProduct((prevState) => ({ ...prevState, [name]: value }));
-      }
+    if (name === 'media' && files) {
+      setProduct((prevState) => ({ ...prevState, media: files[0] }));
+      setMediaPreview(window.URL.createObjectURL(files[0]));
+    } else if (name || value) {
+      setProduct((prevState) => ({ ...prevState, [name]: value }));
     }
   }
 

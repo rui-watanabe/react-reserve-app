@@ -60,6 +60,160 @@ Array [
             onChange={[Function]}
             placeholder="Name"
             type="text"
+            value="test"
+          />
+          <i
+            aria-hidden="true"
+            className="user icon"
+            onClick={[Function]}
+          />
+        </div>
+      </div>
+      <div
+        className="field"
+      >
+        <label>
+          Email
+        </label>
+        <div
+          className="ui fluid left icon input"
+        >
+          <input
+            name="email"
+            onChange={[Function]}
+            placeholder="Email"
+            type="email"
+            value="test@gmail.com"
+          />
+          <i
+            aria-hidden="true"
+            className="envelope icon"
+            onClick={[Function]}
+          />
+        </div>
+      </div>
+      <div
+        className="field"
+      >
+        <label>
+          Password
+        </label>
+        <div
+          className="ui fluid left icon input"
+        >
+          <input
+            name="password"
+            onChange={[Function]}
+            placeholder="Password"
+            type="password"
+            value="33333333"
+          />
+          <i
+            aria-hidden="true"
+            className="lock icon"
+            onClick={[Function]}
+          />
+        </div>
+      </div>
+      <button
+        className="ui orange disabled button"
+        disabled={true}
+        onClick={[Function]}
+        tabIndex={-1}
+        type="submit"
+      >
+        <i
+          aria-hidden="true"
+          className="signup icon"
+          onClick={[Function]}
+        />
+        Signup
+      </button>
+    </div>
+  </form>,
+  <div
+    className="ui warning bottom attached message"
+  >
+    <i
+      aria-hidden="true"
+      className="help icon"
+      onClick={[Function]}
+    />
+    Exiting user?
+     
+    <a
+      href="/login"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Log in here
+    </a>
+    
+    instead.
+  </div>,
+]
+`;
+
+exports[`Signuped 1`] = `
+Array [
+  <div
+    className="ui teal icon attached message"
+  >
+    <i
+      aria-hidden="true"
+      className="settings icon"
+      onClick={[Function]}
+    />
+    <div
+      className="content"
+    >
+      <div
+        className="header"
+      >
+        Get Started!
+      </div>
+      <p>
+        Create a new account
+      </p>
+    </div>
+  </div>,
+  <form
+    className="ui form"
+    onSubmit={[Function]}
+  >
+    <div
+      className="ui error message"
+    >
+      <div
+        className="content"
+      >
+        <div
+          className="header"
+        >
+          Oops!
+        </div>
+        <p>
+          
+        </p>
+      </div>
+    </div>
+    <div
+      className="ui segment"
+    >
+      <div
+        className="field"
+      >
+        <label>
+          Name
+        </label>
+        <div
+          className="ui fluid left icon input"
+        >
+          <input
+            name="name"
+            onChange={[Function]}
+            placeholder="Name"
+            type="text"
             value=""
           />
           <i
