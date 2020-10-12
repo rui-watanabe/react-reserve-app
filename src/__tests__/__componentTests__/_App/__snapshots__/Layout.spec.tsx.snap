@@ -3,7 +3,7 @@
 exports[`Layout 1`] = `
 Array [
   <div
-    className="ui fluid inverted stackable menu"
+    className="ui olive fluid inverted stackable menu"
     id="menu"
   >
     <div
