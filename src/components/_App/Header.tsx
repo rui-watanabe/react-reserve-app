@@ -21,7 +21,7 @@ function Header({ user }: HeaderProps): JSX.Element {
   }
 
   return (
-    <Menu stackable fluid id="menu" inverted>
+    <Menu stackable fluid id="menu" inverted color="olive">
       <Container text>
         <Link href="/">
           <Menu.Item header active={isActive('/')}>

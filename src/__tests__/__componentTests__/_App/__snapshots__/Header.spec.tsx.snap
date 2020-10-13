@@ -2,7 +2,7 @@
 
 exports[`Header 1`] = `
 <div
-  className="ui fluid inverted stackable menu"
+  className="ui olive fluid inverted stackable menu"
   id="menu"
 >
   <div
