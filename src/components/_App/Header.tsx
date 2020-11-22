@@ -21,13 +21,13 @@ function Header({ user }: HeaderProps): JSX.Element {
   }
 
   return (
-    <Menu stackable fluid id="menu" inverted color="olive">
+    <Menu stackable fluid id="menu" inverted>
       <Container text>
         <Link href="/">
           <Menu.Item header active={isActive('/')}>
             <Image
               size="mini"
-              src="/static/logo.svg"
+              src="/static/cat-hand.svg"
               style={{ marginRight: '1em' }}
             />
             MERN Reserve

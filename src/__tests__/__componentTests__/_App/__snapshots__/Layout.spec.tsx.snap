@@ -3,7 +3,7 @@
 exports[`Layout 1`] = `
 Array [
   <div
-    className="ui olive fluid inverted stackable menu"
+    className="ui fluid inverted stackable menu"
     id="menu"
   >
     <div
@@ -16,7 +16,7 @@ Array [
       >
         <img
           className="ui mini image"
-          src="/static/logo.svg"
+          src="/static/cat-hand.svg"
           style={
             Object {
               "marginRight": "1em",
